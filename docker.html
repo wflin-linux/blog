@@ -11,11 +11,12 @@
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
     <meta name="description" content="docker
 
+
 推荐阅读文档地址 
 
 离线阅读:
 
-docker run -it –rm -p 4000:80 ccr.ccs.tencentyun.com/dockerpracticesig/docker_practice:vuepres">
+docker run -it –rm -p 4000:80 ccr.ccs.tencentyun.com/dockerpracticesig/docker_practice:vuepre">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -768,7 +769,8 @@ docker run -it –rm -p 4000:80 ccr.ccs.tencentyun.com/dockerpracticesig/docker_
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h1><p><img src="/docker/image-20220422204735324.png" alt="image-20220422204735324"></p>
+                <h1 id="docker"><a href="#docker" class="headerlink" title="docker"></a>docker</h1><img src="/docker/image-20220422204735324.png" title="image-20220422204735324">
+
 <ul>
 <li><p><a href="https://yeasy.gitbook.io/docker_practice" target="_blank" rel="noopener">推荐阅读文档地址</a> </p>
 </li>
@@ -995,8 +997,10 @@ grant all privileges on *.* to root@'%' with grant option<span aria-hidden="true
 <li>Dockerfile：构建文件，定义了一切的步骤，源代码</li>
 <li>Dockerimages：通过dockerfile 构建生成的一个镜像，最终发布和运行的产品，原来是一个jar，war 包执行起来，全部都要变成容器</li>
 </ol>
-<h2 id="DockerFile"><a href="#DockerFile" class="headerlink" title="DockerFile"></a>DockerFile</h2><h3 id="Docker-文件结构视图"><a href="#Docker-文件结构视图" class="headerlink" title="Docker 文件结构视图"></a>Docker 文件结构视图</h3><p><img src="/docker/image-20210708224811555.png" alt></p>
-<h3 id="Dokcerfile-指令"><a href="#Dokcerfile-指令" class="headerlink" title="Dokcerfile 指令"></a>Dokcerfile 指令</h3><p><img src="/docker/image-20210708230532320.png" alt></p>
+<h2 id="DockerFile"><a href="#DockerFile" class="headerlink" title="DockerFile"></a>DockerFile</h2><h3 id="Docker-文件结构视图"><a href="#Docker-文件结构视图" class="headerlink" title="Docker 文件结构视图"></a>Docker 文件结构视图</h3><img src="/docker/image-20210708224811555.png">
+
+<h3 id="Dokcerfile-指令"><a href="#Dokcerfile-指令" class="headerlink" title="Dokcerfile 指令"></a>Dokcerfile 指令</h3><img src="/docker/image-20210708230532320.png">
+
 <pre class="line-numbers language-shell"><code class="language-shell">FROM                # 基础镜像，一切从这里开始构建
 MAINTAINER            # 镜像是谁写的，姓名+邮箱
 RUN                    # 镜像构建的时候西药运行的命令
@@ -1210,7 +1214,7 @@ drwxr-xr-x   2 root root  4096 Apr 11  2018 media
 <li><p>准备工作</p>
 <ol>
 <li><p>准备镜像文件 <code>tomcat</code> 压缩包，<code>jdk</code>的压缩包</p>
-<p><img src="/docker/image-20220420111006420.png" alt="image-20220420111006420"></p>
+<img src="/docker/image-20220420111006420.png" title="image-20220420111006420">
 </li>
 <li><p>编写 <code>dockerfile</code> 文件，官方命名 <code>Dockerfile</code>，build 会自动寻找这个文件，就不用 -f 指定了</p>
 <pre class="line-numbers language-shell"><code class="language-shell"># 初始镜像
@@ -1353,16 +1357,16 @@ Options:
 <img src="/docker/image-20220420142030709.png" alt="image-20220420142030709" style="zoom:50%;">
 </li>
 <li><p>找到容器镜像服务 并创建 容器镜像服务，个人版本好像是免费的</p>
-<p><img src="/docker/image-20220420142516275.png" alt="image-20220420142516275"></p>
+<img src="/docker/image-20220420142516275.png" title="image-20220420142516275">
 </li>
 <li><p>创建好之后就是这个样子</p>
-<p><img src="/docker/image-20220420142638675.png" alt="image-20220420142638675"></p>
+<img src="/docker/image-20220420142638675.png" title="image-20220420142638675">
 </li>
 <li><p>创建一个私有命名空间</p>
-<p><img src="/docker/image-20220420142749025.png" alt="image-20220420142749025"></p>
+<img src="/docker/image-20220420142749025.png" title="image-20220420142749025">
 </li>
 <li><p>再创建一个镜像仓库,选择本地仓库</p>
-<p><img src="/docker/image-20220420142855312.png" alt="image-20220420142855312"></p>
+<img src="/docker/image-20220420142855312.png" title="image-20220420142855312">
 </li>
 <li><p>根据提示操作就行（很详细）</p>
 </li>
@@ -1387,11 +1391,13 @@ root@wflin-server:~# <span aria-hidden="true" class="line-numbers-rows"><span></
 <h2 id="Docker-网络"><a href="#Docker-网络" class="headerlink" title="Docker 网络"></a>Docker 网络</h2><h3 id="理解-Docker-0"><a href="#理解-Docker-0" class="headerlink" title="理解 Docker 0"></a>理解 Docker 0</h3><blockquote>
 <p>测试：获取 IP 地址 ifconfig 或者 ip addr</p>
 </blockquote>
-<p><img src="/docker/image-20220330230041350.png" alt="image-20220330230041350"></p>
+<img src="/docker/image-20220330230041350.png" title="image-20220330230041350">
+
 <blockquote>
 <p>容器内部网络情况，外部可以 ping 通 docker 外部</p>
 </blockquote>
-<p><img src="/docker/image-20220330230210877.png" alt="image-20220330230210877"></p>
+<img src="/docker/image-20220330230210877.png" title="image-20220330230210877">
+
 <blockquote>
 <p>原理</p>
 </blockquote>
@@ -1402,7 +1408,8 @@ root@wflin-server:~# <span aria-hidden="true" class="line-numbers-rows"><span></
 <li><p>docker0 就是一个网桥（可以理解为一个路由）所有docker 容器之间的通信都是通过 docker0路由转发（小型局域网） 通信。</p>
 </li>
 <li><p>可以看图示</p>
-<p><img src="/docker/image-20220420153503228.png" alt="image-20220420153503228"></p>
+<img src="/docker/image-20220420153503228.png" title="image-20220420153503228">
+
 </li>
 </ol>
 <h3 id="–link"><a href="#–link" class="headerlink" title="–link"></a>–link</h3><blockquote>

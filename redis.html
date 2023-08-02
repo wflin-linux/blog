@@ -1391,7 +1391,8 @@ OK
 <li><code>Redis事务</code>是一个单独的隔离操作：<code>事务中的所有命令都会序列化</code>、按<code>顺序地执行</code>。事务在执行的过程中，不会被其他客户端发送来的命令请求所打断。</li>
 <li>Redis事务的主要作用就是<code>串联多个命令防止别的命令插队</code>。</li>
 </ul>
-<h3 id="事务成功"><a href="#事务成功" class="headerlink" title="事务成功"></a>事务成功</h3><p><img src="/redis/image-20220324135303964.png" alt="image-20220324135303964"></p>
+<h3 id="事务成功"><a href="#事务成功" class="headerlink" title="事务成功"></a>事务成功</h3><img src="/redis/image-20220324135303964.png" title="image-20220324135303964">
+
 <h4 id="Multi"><a href="#Multi" class="headerlink" title="Multi"></a>Multi</h4><ul>
 <li>创建一个队列 Queen<ul>
 <li>类似 MySQL 中的开启事务（translate）</li>
@@ -1431,7 +1432,7 @@ OK
 127.0.0.1:6379> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <h3 id="事务失败"><a href="#事务失败" class="headerlink" title="事务失败"></a>事务失败</h3><h4 id="组队中出错"><a href="#组队中出错" class="headerlink" title="组队中出错"></a>组队中出错</h4><ul>
 <li><p><code>组队中某个命令出现报告错误，执行时整个的所有队列都会被取消</code></p>
-<p><img src="/redis/image-20220324142858758.png" alt="image-20220324142858758"></p>
+<img src="/redis/image-20220324142858758.png" title="image-20220324142858758">
 </li>
 <li><p>事例演示</p>
 <pre class="line-numbers language-shell"><code class="language-shell">127.0.0.1:6379> multi
@@ -1449,7 +1450,7 @@ QUEUED
 </ul>
 <h4 id="执行时出错"><a href="#执行时出错" class="headerlink" title="执行时出错"></a>执行时出错</h4><ul>
 <li><p><code>如果执行阶段某个命令报出了错误，则只有报错的命令不会被执行，而其他的命令都会执行，不会回滚</code></p>
-<p><img src="/redis/image-20220324143105145.png" alt="image-20220324143105145"></p>
+<img src="/redis/image-20220324143105145.png" title="image-20220324143105145">
 </li>
 <li><p>实例演示</p>
 <pre class="line-numbers language-shell"><code class="language-shell">127.0.0.1:6379> multi
@@ -1475,20 +1476,24 @@ QUEUED
 <h3 id="事务冲突的问题"><a href="#事务冲突的问题" class="headerlink" title="事务冲突的问题"></a>事务冲突的问题</h3><ul>
 <li>事例子：</li>
 </ul>
-<p><img src="/redis/image-20220417231850767.png" alt="image-20220417231850767"></p>
-<h2 id="Redis-事务-秒杀案例"><a href="#Redis-事务-秒杀案例" class="headerlink" title="Redis_事务_秒杀案例"></a>Redis_事务_秒杀案例</h2><h3 id="1、解决计数器和人员记录的事务操作"><a href="#1、解决计数器和人员记录的事务操作" class="headerlink" title="1、解决计数器和人员记录的事务操作"></a>1、解决计数器和人员记录的事务操作</h3><p><img src="/redis/image-20220419144211964-1672285122941.png" alt="image-20220419144211964"></p>
+<img src="/redis/image-20220417231850767.png" title="image-20220417231850767">
+
+<h2 id="Redis-事务-秒杀案例"><a href="#Redis-事务-秒杀案例" class="headerlink" title="Redis_事务_秒杀案例"></a>Redis_事务_秒杀案例</h2><h3 id="1、解决计数器和人员记录的事务操作"><a href="#1、解决计数器和人员记录的事务操作" class="headerlink" title="1、解决计数器和人员记录的事务操作"></a>1、解决计数器和人员记录的事务操作</h3><img src="/redis/image-20220419144211964-1672285122941.png" title="image-20220419144211964">
+
 <h3 id="2、Redis事务–秒杀并发模拟"><a href="#2、Redis事务–秒杀并发模拟" class="headerlink" title="2、Redis事务–秒杀并发模拟"></a>2、Redis事务–秒杀并发模拟</h3><h3 id="jedis秒杀实例"><a href="#jedis秒杀实例" class="headerlink" title="jedis秒杀实例"></a>jedis秒杀实例</h3><blockquote>
 <p>待整理</p>
 </blockquote>
 <h3 id="RedisTemplate-秒杀实例"><a href="#RedisTemplate-秒杀实例" class="headerlink" title="RedisTemplate 秒杀实例"></a>RedisTemplate 秒杀实例</h3><p><a href="seckill.html" title=":include">RedisTemplate</a></p>
 <h2 id="锁"><a href="#锁" class="headerlink" title="锁"></a>锁</h2><h4 id="悲观-锁：-Pessimistic-Lock"><a href="#悲观-锁：-Pessimistic-Lock" class="headerlink" title="悲观    锁：(Pessimistic Lock)"></a>悲观    锁：(Pessimistic Lock)</h4><ul>
 <li><p>顾名思义，就是很悲观，<code>每次去拿数据的时候都认为别人会修改</code>，所以<code>每次在拿数据的时候都会上锁</code>，这样<code>别人想拿这个数据就会block直到它拿到锁</code>。传统的关系型数据库里边就用到了很多这种锁机制，比如<code>行锁，表锁等，读锁，写锁</code>等，都是在做操作之前先上锁。</p>
-<p><img src="/redis/image-20220417232210268.png" alt="image-20220417232210268"></p>
+<img src="/redis/image-20220417232210268.png" title="image-20220417232210268">
+
 </li>
 </ul>
 <h4 id="乐观锁-Optimistic-Lock"><a href="#乐观锁-Optimistic-Lock" class="headerlink" title="乐观锁 (Optimistic Lock)"></a>乐观锁 (Optimistic Lock)</h4><ul>
 <li><p>顾名思义，就是很乐观，<code>每次去拿数据的时候都认为别人不会修改</code>，所以<code>不会上锁</code>，但是<code>在更新的时候会判断</code>一下在此期间别人有没有去更新这个数据，可以<code>使用版本号等机制</code>。<code>乐观锁适用于多读的应用类型</code>，这样可以提高吞吐量。<code>Redis就是利用这种check-and-set机制实现事务的</code>。(MybatisPlus 事务机制很像)</p>
-<p><img src="/redis/image-20220417232444176.png" alt="image-20220417232444176"></p>
+<img src="/redis/image-20220417232444176.png" title="image-20220417232444176">
+
 </li>
 </ul>
 <h4 id="watch-and-unwatch"><a href="#watch-and-unwatch" class="headerlink" title="watch and unwatch"></a>watch and unwatch</h4><ul>
@@ -1775,7 +1780,9 @@ repl_backlog_histlen:812
 <li>全量复制：而slave服务在接收到数据库文件数据后，将其存盘并加载到内存中。</li>
 <li>增量复制：Master继续将新的所有收集到的修改命令依次传给slave,完成同步</li>
 <li>但是只要是重新连接master,一次完全同步（全量复制)将被自动执行</li>
-<li><img src="/redis/image-20220419222150752.png" alt="image-20220419222150752"></li>
+<li><img src="/redis/image-20220419222150752.png" title="image-20220419222150752">
+
+</li>
 </ul>
 <h3 id="薪伙相传"><a href="#薪伙相传" class="headerlink" title="薪伙相传"></a>薪伙相传</h3><ul>
 <li>上一个Slave可以是下一个slave的Master，Slave同样可以接收其他slaves的连接和同步请求，那么该slave作为了链条中下一个的master, 可以有效减轻master的写压力,去中心化降低风险。</li>
@@ -1952,7 +1959,7 @@ repl_backlog_histlen:702
 <pre class="line-numbers language-txt"><code class="language-txt">优先级在redis.conf中默认：【版本不同可能这个名字不同】slave-priority 100，值越小优先级越高
 偏移量是指获得原主机数据最全的
 每个redis实例启动后都会随机生成一个40位的runid<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-<p><img src="/redis/image-20220419230223477.png" alt="image-20220419230223477">    </p>
+<img src="/redis/image-20220419230223477.png" title="image-20220419230223477">    
 </li>
 <li><blockquote>
 <p>java 代码中使用哨兵主从</p>

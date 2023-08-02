@@ -904,7 +904,7 @@
 <span class="token attr-name">eureka.client.service-url.defaultZone</span><span class="token punctuation">=</span><span class="token attr-value">http://localhost:8761/eureka</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>此时访问 <code>http://localhost:8761</code> 地址就可以看到注册中心的页面了</p>
-<p><img src="/springcloud/image-20220628210123819.png" alt="image-20220628210123819"></p>
+<img src="/springcloud/image-20220628210123819.png" title="image-20220628210123819">
 </li>
 <li><p>此时有一个问题，就是 Eureka-Server 也被当成了一个客户端被注册进去了，所以这是不科学的。改进配置文件</p>
 </li>
@@ -923,14 +923,15 @@
 
 <span class="token comment" spellcheck="true"># 让当前应用只被当成服务注册中心</span>
 <span class="token attr-name">eureka.client.register-with-eureka</span><span class="token punctuation">=</span><span class="token attr-value">false</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<p><img src="/springcloud/image-20220628210803943.png" alt="image-20220628210803943"></p>
+<img src="/springcloud/image-20220628210803943.png" title="image-20220628210803943">
+
 </li>
 </ul>
 <h3 id="3、开发一个-eureka-的客户端"><a href="#3、开发一个-eureka-的客户端" class="headerlink" title="3、开发一个 eureka 的客户端"></a>3、开发一个 eureka 的客户端</h3><ul>
 <li><p>拆分出来的微服务</p>
 </li>
 <li><p>创建一个 springboot 项目</p>
-<p><img src="/springcloud/image-20220628220032563.png" alt="image-20220628220032563"></p>
+<img src="/springcloud/image-20220628220032563.png" title="image-20220628220032563">
 </li>
 <li><p>添加 springboot  项目依赖和 Eureka-client 依赖</p>
 <pre class="line-numbers language-xml"><code class="language-xml">    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>dependencies</span><span class="token punctuation">></span></span>
@@ -969,7 +970,8 @@
 <span class="token attr-name">eureka.client.service-url.defaultZone</span><span class="token punctuation">=</span><span class="token attr-value">http://localhost:8761/eureka</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 <li><p>启动 EurekaServer 和 EurekaClient 访问 <a href="http://localhost:8761" target="_blank" rel="noopener">http://localhost:8761</a></p>
-<p><img src="/springcloud/image-20220628220654698.png" alt="image-20220628220654698"></p>
+<img src="/springcloud/image-20220628220654698.png" title="image-20220628220654698">
+
 <blockquote>
 <p>这里显示了 EurekaClient 的一个客户端</p>
 </blockquote>
@@ -995,7 +997,8 @@
 </blockquote>
 </li>
 </ul>
-<p><img src="/springcloud/image-20220628230759024.png" alt="image-20220628230759024"></p>
+<img src="/springcloud/image-20220628230759024.png" title="image-20220628230759024">
+
 <ul>
 <li>管理界面基本介绍<ul>
 <li>dcl：数据中心名称</li>
@@ -1009,7 +1012,7 @@
 </ul>
 <h2 id="consul-client-服务客户端（微服务）"><a href="#consul-client-服务客户端（微服务）" class="headerlink" title="consul client 服务客户端（微服务）"></a>consul client 服务客户端（微服务）</h2><ul>
 <li><p>创建一个独立的 springboot 应用</p>
-<p><img src="/springcloud/image-20220628232349475.png" alt="image-20220628232349475"></p>
+<img src="/springcloud/image-20220628232349475.png" title="image-20220628232349475">
 </li>
 <li><p>引入 consul 相关依赖</p>
 <pre class="line-numbers language-xml"><code class="language-xml"><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
