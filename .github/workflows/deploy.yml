@@ -6,27 +6,27 @@ on:
       - master  # 触发自动部署的分支，这里设置为 main 分支，可以根据你的实际情况修改
 
 jobs:
-  deploy:
+  build-and-deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Setup Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: '14'
+          node-version: '14'  # 使用 Node.js 14 版本
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: npm install
 
-      - name: Build Hexo
-        run: hexo g  # 替换成你的 Hexo 构建命令
+      - name: Build
+        run: npx hexo generate  # 使用 Hexo 生成静态网页
 
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public  # 这里指定你要部署的文件夹路径，通常是 Hexo 生成的 public 文件夹
+          branch: gh-pages  # 将生成的静态网页部署到 gh-pages 分支，用于 GitHub Pages
+          folder: public  # 部署的文件夹，默认为 public
 
