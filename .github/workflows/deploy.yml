@@ -29,7 +29,6 @@ jobs:
         run: npx hexo generate
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
-        run:  npx hexo d
         with:
           personal_token: ${{ secrets.ACTION_TOKEN }}
           publish_dir: ./public
