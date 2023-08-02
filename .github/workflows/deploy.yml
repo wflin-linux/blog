@@ -65,3 +65,5 @@ jobs:
         with:
           github_token: ${{ secrets.ACTION_TOKEN }}
           publish_dir: ./public  # 这里指定你要部署的文件夹路径，通常是 Hexo 生成的 public 文件夹
+          cname: wflin.ltd
+          publish_branch: 'master'
