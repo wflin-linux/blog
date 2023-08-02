@@ -27,6 +27,6 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@3.6.2
         with:
-          branch: gh-pages  # 将生成的静态网页部署到 gh-pages 分支，用于 GitHub Pages
+          branch: master  # 将生成的静态网页部署到 gh-pages 分支，用于 GitHub Pages
           folder: public  # 部署的文件夹，默认为 public
 
