@@ -28,6 +28,7 @@ jobs:
       - name: Build
         run: npx hexo generate
       - name: Deploy
+        run: npx hexo d
         uses: peaceiris/actions-gh-pages@v3
         with:
           personal_token: ${{ secrets.ACTION_TOKEN }}
