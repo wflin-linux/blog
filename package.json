@@ -9,6 +9,7 @@
     "@babel/core": "^7.5.5",
     "emoji": "^0.3.2",
     "eslint": "^6.1.0",
+    "github-pages-deploy-action": "^3.5.1",
     "hexo": "^3.9.0",
     "hexo-asset-image": "^1.0.0",
     "hexo-blog-encrypt": "^3.1.6",
