@@ -1,0 +1,597 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>wflin 的博客</title>
+  
+  <subtitle>wflin 的博客</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://wflin.ltd/"/>
+  <updated>2023-08-02T05:29:01.303Z</updated>
+  <id>https://wflin.ltd/</id>
+  
+  <author>
+    <name>wflin</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>springboot-tools</title>
+    <link href="https://wflin.ltd/springboot-tools.html"/>
+    <id>https://wflin.ltd/springboot-tools.html</id>
+    <published>2023-08-02T05:29:01.303Z</published>
+    <updated>2023-08-02T05:29:01.303Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;POM&quot;&gt;&lt;a href=&quot;#POM&quot; class=&quot;headerlink&quot; title=&quot;POM&quot;&gt;&lt;/a&gt;POM&lt;/h1&gt;&lt;h2 id=&quot;清除本地仓库的坏包&quot;&gt;&lt;a href=&quot;#清除本地仓库的坏包&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="Java 开发常用配置" scheme="https://wflin.ltd/categories/Java-%E5%BC%80%E5%8F%91%E5%B8%B8%E7%94%A8%E9%85%8D%E7%BD%AE/"/>
+    
+    
+      <category term="java" scheme="https://wflin.ltd/tags/java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>openwrt</title>
+    <link href="https://wflin.ltd/openwrt.html"/>
+    <id>https://wflin.ltd/openwrt.html</id>
+    <published>2023-07-10T00:00:00.000Z</published>
+    <updated>2023-08-02T05:29:01.295Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;环境准备&quot;&gt;&lt;a href=&quot;#环境准备&quot; class=&quot;headerlink&quot; title=&quot;环境准备&quot;&gt;&lt;/a&gt;环境准备&lt;/h1&gt;&lt;h1 id=&quot;编译&quot;&gt;&lt;a href=&quot;#编译&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="openwrt" scheme="https://wflin.ltd/categories/openwrt/"/>
+    
+    
+      <category term="iot" scheme="https://wflin.ltd/tags/iot/"/>
+    
+      <category term="openwrt" scheme="https://wflin.ltd/tags/openwrt/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>总线协议</title>
+    <link href="https://wflin.ltd/zong-xian-xie-yi.html"/>
+    <id>https://wflin.ltd/zong-xian-xie-yi.html</id>
+    <published>2023-06-10T00:00:00.000Z</published>
+    <updated>2023-08-02T05:29:01.323Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;呵呵呵呵呵&quot;&gt;&lt;a href=&quot;#呵呵呵呵呵&quot; class=&quot;headerlink&quot; title=&quot;呵呵呵呵呵&quot;&gt;&lt;/a&gt;呵呵呵呵呵&lt;/h1&gt;&lt;h1 id=&quot;总线通信基本概念&quot;&gt;&lt;a href=&quot;#总线通信基本概念&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="嵌入式" scheme="https://wflin.ltd/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
+    
+    
+      <category term="c" scheme="https://wflin.ltd/tags/c/"/>
+    
+      <category term="I2C" scheme="https://wflin.ltd/tags/I2C/"/>
+    
+      <category term="SPI" scheme="https://wflin.ltd/tags/SPI/"/>
+    
+      <category term="USB" scheme="https://wflin.ltd/tags/USB/"/>
+    
+      <category term="UART" scheme="https://wflin.ltd/tags/UART/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vscode开发 Linux 系统编程</title>
+    <link href="https://wflin.ltd/vscode-bian-xie-linux-c.html"/>
+    <id>https://wflin.ltd/vscode-bian-xie-linux-c.html</id>
+    <published>2023-04-15T00:00:00.000Z</published>
+    <updated>2023-08-02T05:29:01.315Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;vscode-插件下载&quot;&gt;&lt;a href=&quot;#vscode-插件下载&quot; class=&quot;headerlink&quot; title=&quot;vscode 插件下载&quot;&gt;&lt;/a&gt;vscode 插件下载&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;c/c++&lt;/li&gt;
+&lt;li&gt;c/c++
+        
+      
+    
+    </summary>
+    
+      <category term="嵌入式" scheme="https://wflin.ltd/categories/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
+    
+    
+      <category term="c" scheme="https://wflin.ltd/tags/c/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>编码常用类和方法</title>
+    <link href="https://wflin.ltd/code-tools.html"/>
+    <id>https://wflin.ltd/code-tools.html</id>
+    <published>2023-02-19T00:00:00.000Z</published>
+    <updated>2023-08-02T05:29:01.271Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;java&quot;&gt;&lt;a href=&quot;#java&quot; class=&quot;headerlink&quot; title=&quot;java&quot;&gt;&lt;/a&gt;java&lt;/h1&gt;&lt;h2 id=&quot;boot常用pom&quot;&gt;&lt;a href=&quot;#boot常用pom&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="code-tools" scheme="https://wflin.ltd/categories/code-tools/"/>
+    
+    
+      <category term="java" scheme="https://wflin.ltd/tags/java/"/>
+    
+      <category term="vue" scheme="https://wflin.ltd/tags/vue/"/>
+    
+      <category term="javascript" scheme="https://wflin.ltd/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript 常用函数</title>
+    <link href="https://wflin.ltd/js-han-shu.html"/>
+    <id>https://wflin.ltd/js-han-shu.html</id>
+    <published>2023-02-18T00:00:00.000Z</published>
+    <updated>2023-08-02T05:29:01.287Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;JavaScript-下拉加载防抖节流函数&quot;&gt;&lt;a href=&quot;#JavaScript-下拉加载防抖节流函数&quot; class=&quot;headerlink&quot; title=&quot;JavaScript 下拉加载防抖节流函数&quot;&gt;&lt;/a&gt;JavaScript
+        
+      
+    
+    </summary>
+    
+      <category term="javascript" scheme="https://wflin.ltd/categories/javascript/"/>
+    
+    
+      <category term="vue" scheme="https://wflin.ltd/tags/vue/"/>
+    
+      <category term="javascript" scheme="https://wflin.ltd/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Vue 配置</title>
+    <link href="https://wflin.ltd/vue-cli.html"/>
+    <id>https://wflin.ltd/vue-cli.html</id>
+    <published>2022-11-29T09:35:03.000Z</published>
+    <updated>2023-08-02T05:29:01.315Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;Vue-脚手架打包注意事项&quot;&gt;&lt;a href=&quot;#Vue-脚手架打包注意事项&quot; class=&quot;headerlink&quot; title=&quot;Vue 脚手架打包注意事项&quot;&gt;&lt;/a&gt;Vue 脚手架打包注意事项&lt;/h1&gt;&lt;h2 id=&quot;卸载-eslint（个人喜好）&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="vue打包配置" scheme="https://wflin.ltd/categories/vue%E6%89%93%E5%8C%85%E9%85%8D%E7%BD%AE/"/>
+    
+    
+      <category term="vue" scheme="https://wflin.ltd/tags/vue/"/>
+    
+      <category term="javascript" scheme="https://wflin.ltd/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>minio</title>
+    <link href="https://wflin.ltd/minio.html"/>
+    <id>https://wflin.ltd/minio.html</id>
+    <published>2022-11-06T00:00:00.000Z</published>
+    <updated>2023-08-02T05:29:01.287Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;firstOne&quot;&gt;&lt;a href=&quot;#firstOne&quot; class=&quot;headerlink&quot; title=&quot;firstOne&quot;&gt;&lt;/a&gt;firstOne&lt;/h1&gt;&lt;h2 id=&quot;MinIOUtils&quot;&gt;&lt;a href=&quot;#MinIOUtils&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="oos" scheme="https://wflin.ltd/categories/oos/"/>
+    
+    
+      <category term="java - oos" scheme="https://wflin.ltd/tags/java-oos/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mqtt</title>
+    <link href="https://wflin.ltd/mqtt.html"/>
+    <id>https://wflin.ltd/mqtt.html</id>
+    <published>2022-09-01T00:00:00.000Z</published>
+    <updated>2023-08-02T05:29:01.295Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;mqtt&quot;&gt;&lt;a href=&quot;#mqtt&quot; class=&quot;headerlink&quot; title=&quot;mqtt&quot;&gt;&lt;/a&gt;mqtt&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;遥测传输协议，基于发布和订阅的轻量级通讯协议，构建在 tcp/ip 协议之上&lt;/li&gt;
+&lt;li&gt;标准版，简化版
+        
+      
+    
+    </summary>
+    
+      <category term="iot" scheme="https://wflin.ltd/categories/iot/"/>
+    
+    
+      <category term="iot" scheme="https://wflin.ltd/tags/iot/"/>
+    
+      <category term="mqtt" scheme="https://wflin.ltd/tags/mqtt/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>restful</title>
+    <link href="https://wflin.ltd/restful.html"/>
+    <id>https://wflin.ltd/restful.html</id>
+    <published>2022-03-25T00:00:00.000Z</published>
+    <updated>2023-08-02T05:29:01.303Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;restful&quot;&gt;&lt;a href=&quot;#restful&quot; class=&quot;headerlink&quot; title=&quot;restful&quot;&gt;&lt;/a&gt;restful&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;请求方法原则&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;get
+        
+      
+    
+    </summary>
+    
+      <category term="javaweb" scheme="https://wflin.ltd/categories/javaweb/"/>
+    
+    
+      <category term="java" scheme="https://wflin.ltd/tags/java/"/>
+    
+      <category term="javaweb" scheme="https://wflin.ltd/tags/javaweb/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>RabbitMQ</title>
+    <link href="https://wflin.ltd/rabbitmq.html"/>
+    <id>https://wflin.ltd/rabbitmq.html</id>
+    <published>2022-03-20T00:00:00.000Z</published>
+    <updated>2023-08-02T05:29:01.295Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;RabbitMQ&quot;&gt;&lt;a href=&quot;#RabbitMQ&quot; class=&quot;headerlink&quot; title=&quot;RabbitMQ&quot;&gt;&lt;/a&gt;RabbitMQ&lt;/h1&gt;&lt;h2 id=&quot;1-MQ引言&quot;&gt;&lt;a href=&quot;#1-MQ引言&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="RabbitMQ" scheme="https://wflin.ltd/categories/RabbitMQ/"/>
+    
+    
+      <category term="java" scheme="https://wflin.ltd/tags/java/"/>
+    
+      <category term="MQ" scheme="https://wflin.ltd/tags/MQ/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Latex</title>
+    <link href="https://wflin.ltd/latex.html"/>
+    <id>https://wflin.ltd/latex.html</id>
+    <published>2022-03-10T00:00:00.000Z</published>
+    <updated>2023-08-02T05:29:01.287Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;laTex-一些简单常用语法&quot;&gt;&lt;a href=&quot;#laTex-一些简单常用语法&quot; class=&quot;headerlink&quot; title=&quot;laTex 一些简单常用语法&quot;&gt;&lt;/a&gt;laTex 一些简单常用语法&lt;/h1&gt;&lt;p&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="latex" scheme="https://wflin.ltd/categories/latex/"/>
+    
+    
+      <category term="Markdown" scheme="https://wflin.ltd/tags/Markdown/"/>
+    
+      <category term="Math" scheme="https://wflin.ltd/tags/Math/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>redis</title>
+    <link href="https://wflin.ltd/redis.html"/>
+    <id>https://wflin.ltd/redis.html</id>
+    <published>2022-01-27T00:00:00.000Z</published>
+    <updated>2023-08-02T05:29:01.295Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;redis&quot;&gt;&lt;a href=&quot;#redis&quot; class=&quot;headerlink&quot; title=&quot;redis&quot;&gt;&lt;/a&gt;redis&lt;/h1&gt;&lt;h2 id=&quot;安装redis&quot;&gt;&lt;a href=&quot;#安装redis&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="noSQL" scheme="https://wflin.ltd/categories/noSQL/"/>
+    
+    
+      <category term="java" scheme="https://wflin.ltd/tags/java/"/>
+    
+      <category term="linux" scheme="https://wflin.ltd/tags/linux/"/>
+    
+      <category term="redis" scheme="https://wflin.ltd/tags/redis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>c</title>
+    <link href="https://wflin.ltd/c.html"/>
+    <id>https://wflin.ltd/c.html</id>
+    <published>2021-11-20T00:00:00.000Z</published>
+    <updated>2023-08-02T05:29:01.271Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;逻辑表达式（又叫布尔表达式）&quot;&gt;&lt;a href=&quot;#逻辑表达式（又叫布尔表达式）&quot; class=&quot;headerlink&quot; title=&quot;逻辑表达式（又叫布尔表达式）&quot;&gt;&lt;/a&gt;逻辑表达式（又叫布尔表达式）&lt;/h1&gt;&lt;h2 id=&quot;与-amp-、或-、非&quot;&gt;&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="c" scheme="https://wflin.ltd/categories/c/"/>
+    
+    
+      <category term="aiot" scheme="https://wflin.ltd/tags/aiot/"/>
+    
+      <category term="c" scheme="https://wflin.ltd/tags/c/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>树莓派国内镜像源</title>
+    <link href="https://wflin.ltd/raspi-source.html"/>
+    <id>https://wflin.ltd/raspi-source.html</id>
+    <published>2021-11-20T00:00:00.000Z</published>
+    <updated>2023-08-02T05:29:01.295Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;树莓派国内镜像源地址&quot;&gt;&lt;a href=&quot;#树莓派国内镜像源地址&quot; class=&quot;headerlink&quot; title=&quot;树莓派国内镜像源地址&quot;&gt;&lt;/a&gt;树莓派国内镜像源地址&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;查看树莓版本命令：&lt;/p&gt;
+&lt;pre
+        
+      
+    
+    </summary>
+    
+      <category term="raspberrypi" scheme="https://wflin.ltd/categories/raspberrypi/"/>
+    
+    
+      <category term="linux" scheme="https://wflin.ltd/tags/linux/"/>
+    
+      <category term="raspberrypi" scheme="https://wflin.ltd/tags/raspberrypi/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL practise</title>
+    <link href="https://wflin.ltd/niu-ke-mysql.html"/>
+    <id>https://wflin.ltd/niu-ke-mysql.html</id>
+    <published>2021-11-17T00:00:00.000Z</published>
+    <updated>2023-08-02T05:29:01.323Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;MySQL-exam&quot;&gt;&lt;a href=&quot;#MySQL-exam&quot; class=&quot;headerlink&quot; title=&quot;MySQL exam&quot;&gt;&lt;/a&gt;MySQL exam&lt;/h1&gt;&lt;p&gt;[传送门](&lt;a
+        
+      
+    
+    </summary>
+    
+      <category term="java" scheme="https://wflin.ltd/categories/java/"/>
+    
+    
+      <category term="MySQL" scheme="https://wflin.ltd/tags/MySQL/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>docker</title>
+    <link href="https://wflin.ltd/docker.html"/>
+    <id>https://wflin.ltd/docker.html</id>
+    <published>2021-11-15T00:00:00.000Z</published>
+    <updated>2023-08-02T05:29:01.271Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;docker&quot;&gt;&lt;a href=&quot;#docker&quot; class=&quot;headerlink&quot; title=&quot;docker&quot;&gt;&lt;/a&gt;docker&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/docker/image-20220422204735324.png&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="docker" scheme="https://wflin.ltd/categories/docker/"/>
+    
+    
+      <category term="docker" scheme="https://wflin.ltd/tags/docker/"/>
+    
+      <category term="linux" scheme="https://wflin.ltd/tags/linux/"/>
+    
+      <category term="容器" scheme="https://wflin.ltd/tags/%E5%AE%B9%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ATM小项目</title>
+    <link href="https://wflin.ltd/aiot.html"/>
+    <id>https://wflin.ltd/aiot.html</id>
+    <published>2021-10-29T00:00:00.000Z</published>
+    <updated>2023-08-02T05:29:01.271Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;递归&quot;&gt;&lt;a href=&quot;#递归&quot; class=&quot;headerlink&quot; title=&quot;递归&quot;&gt;&lt;/a&gt;递归&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;累乘 &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;非递归&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre class=&quot;line-numbers
+        
+      
+    
+    </summary>
+    
+      <category term="c" scheme="https://wflin.ltd/categories/c/"/>
+    
+    
+      <category term="aiot" scheme="https://wflin.ltd/tags/aiot/"/>
+    
+      <category term="c" scheme="https://wflin.ltd/tags/c/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>字符设备驱动框架</title>
+    <link href="https://wflin.ltd/qu-dong-kuang-jia-dai-ma.html"/>
+    <id>https://wflin.ltd/qu-dong-kuang-jia-dai-ma.html</id>
+    <published>2021-10-26T00:00:00.000Z</published>
+    <updated>2023-08-02T05:29:01.327Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;字符设备驱动框架代码&quot;&gt;&lt;a href=&quot;#字符设备驱动框架代码&quot; class=&quot;headerlink&quot; title=&quot;字符设备驱动框架代码&quot;&gt;&lt;/a&gt;字符设备驱动框架代码&lt;/h1&gt;&lt;pre class=&quot;line-numbers
+        
+      
+    
+    </summary>
+    
+      <category term="c" scheme="https://wflin.ltd/categories/c/"/>
+    
+    
+      <category term="c" scheme="https://wflin.ltd/tags/c/"/>
+    
+      <category term="linux" scheme="https://wflin.ltd/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>题目-题解</title>
+    <link href="https://wflin.ltd/ti-mu-ti-jie.html"/>
+    <id>https://wflin.ltd/ti-mu-ti-jie.html</id>
+    <published>2021-10-20T00:00:00.000Z</published>
+    <updated>2023-08-02T05:29:01.323Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;第四次题与题解&quot;&gt;&lt;a href=&quot;#第四次题与题解&quot; class=&quot;headerlink&quot; title=&quot;第四次题与题解&quot;&gt;&lt;/a&gt;第四次题与题解&lt;/h1&gt;&lt;h2 id=&quot;凯撒加密&quot;&gt;&lt;a href=&quot;#凯撒加密&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="c" scheme="https://wflin.ltd/categories/c/"/>
+    
+    
+      <category term="aiot" scheme="https://wflin.ltd/tags/aiot/"/>
+    
+      <category term="c" scheme="https://wflin.ltd/tags/c/"/>
+    
+  </entry>
+  
+</feed>
