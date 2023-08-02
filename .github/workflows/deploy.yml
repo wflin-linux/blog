@@ -22,8 +22,8 @@ jobs:
           npm install          
       - name: Prepare git env
         run: |
-          git config --global user.email me@razeen.me
-          git config --global user.name razeencheng          
+          git config --global user.email 2424357107@qqcom
+          git config --global user.name wflin-linux          
       - name: Deploy Blog
         run: | 
           hexo clean
