@@ -174,7 +174,7 @@ categories:
 
 * 此时访问 `http://localhost:8761` 地址就可以看到注册中心的页面了
 
-  ![image-20220628210123819](%7Fspringcloud/image-20220628210123819.png)
+  ![image-20220628210123819](springcloud/image-20220628210123819.png)
 
 * 此时有一个问题，就是 Eureka-Server 也被当成了一个客户端被注册进去了，所以这是不科学的。改进配置文件
 
@@ -197,7 +197,7 @@ categories:
   eureka.client.register-with-eureka=false
   ```
 
-  ![image-20220628210803943](%7Fspringcloud/image-20220628210803943.png)
+  ![image-20220628210803943](springcloud/image-20220628210803943.png)
 
 ### 3、开发一个 eureka 的客户端
 
@@ -205,7 +205,7 @@ categories:
 
 * 创建一个 springboot 项目
 
-  ![image-20220628220032563](%7Fspringcloud/image-20220628220032563.png)
+  ![image-20220628220032563](springcloud/image-20220628220032563.png)
 
 * 添加 springboot  项目依赖和 Eureka-client 依赖
 
@@ -254,7 +254,7 @@ categories:
 
 * 启动 EurekaServer 和 EurekaClient 访问 http://localhost:8761
 
-  ![image-20220628220654698](%7Fspringcloud/image-20220628220654698.png)
+  ![image-20220628220654698](springcloud/image-20220628220654698.png)
 
   > 这里显示了 EurekaClient 的一个客户端
 
@@ -283,7 +283,7 @@ categories:
 
   >docker run -d --name consul -p 8500:8500 --name co consul
 
-![image-20220628230759024](%7Fspringcloud/image-20220628230759024.png)
+![image-20220628230759024](springcloud/image-20220628230759024.png)
 
 * 管理界面基本介绍
   * dcl：数据中心名称
@@ -297,7 +297,7 @@ categories:
 
 * 创建一个独立的 springboot 应用
 
-  ![image-20220628232349475](%7Fspringcloud/image-20220628232349475.png)
+  ![image-20220628232349475](springcloud/image-20220628232349475.png)
 
 * 引入 consul 相关依赖
 

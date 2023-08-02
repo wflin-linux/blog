@@ -17,7 +17,7 @@ categories:
 # 启动metasploit
 
 * msfconsole
-* ![image-20230628011359661](metasploit.assets/image-20230628011359661.png)
+* ![image-20230628011359661](metasploit/image-20230628011359661.png)
 
 
 
@@ -25,4 +25,4 @@ categories:
 
 * 操作步骤
 
-    ![image-20230628012546912](metasploit.assets/image-20230628012546912.png)
+    ![image-20230628012546912](metasploit/image-20230628012546912.png)

@@ -33,7 +33,7 @@ categories:
 
 ## 场景
 
-![](mqtt.assets/v2-17b8d17ca2318b951ca48539f04306f7_720w.webp)
+![](mqtt/v2-17b8d17ca2318b951ca48539f04306f7_720w.webp)
 
 ## QoS：
 
@@ -49,7 +49,7 @@ categories:
 
 - `消息体（Payload）`，存在于部分`MQTT`数据包中，表示客户端收到的具体内容；
 
-  ![](mqtt.assets/v2-861c089bea9570876bb13a031e6c3902_720w.webp)
+  ![](mqtt/v2-861c089bea9570876bb13a031e6c3902_720w.webp)
 
 ## 平台
 
@@ -88,14 +88,14 @@ services:
 
 ### 连接
 
-* ![image-20230504162948660](mqtt.assets/image-20230504162948660.png)
+* ![image-20230504162948660](mqtt/image-20230504162948660.png)
 
 * 界面信息说明
-* ![image-20230504163115396](mqtt.assets/image-20230504163115396.png)
+* ![image-20230504163115396](mqtt/image-20230504163115396.png)
 
 ### 日志：
 
-* ![image-20230504163431942](mqtt.assets/image-20230504163431942.png)
+* ![image-20230504163431942](mqtt/image-20230504163431942.png)
 
 ## 开源框架
 

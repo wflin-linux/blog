@@ -147,21 +147,21 @@ modbus.c:1202:9: note: use option -std=c99 or -std=gnu99 to compile your code
 
 * No connection 无连接
 
-  ![image-20230426150558525](F:/blog/source/_posts/modbus.assets/image-20230426150558525.png)
+  ![image-20230426150558525](F:/blog/source/_posts/modbus/image-20230426150558525.png)
 
 ## Slave
 
 * 从机配置
 
-  ![image-20230426151108754](F:/blog/source/_posts/modbus.assets/image-20230426151108754.png)
+  ![image-20230426151108754](F:/blog/source/_posts/modbus/image-20230426151108754.png)
 
 * 常用功能码及其地址对应表
 
-  ![image-20230426161902783](F:/blog/source/_posts/modbus.assets/image-20230426161902783.png)
+  ![image-20230426161902783](F:/blog/source/_posts/modbus/image-20230426161902783.png)
 
 * 修改名字及其对应的值
 
-  ![](F:/blog/source/_posts/modbus.assets/c603849b8caf4e4ba164d1224446bf9a.png)
+  ![](F:/blog/source/_posts/modbus/c603849b8caf4e4ba164d1224446bf9a.png)
 
 
 
@@ -171,11 +171,11 @@ modbus.c:1202:9: note: use option -std=c99 or -std=gnu99 to compile your code
 
 * 发送报文格式
 
-  ![image-20230427173732124](F:/blog/source/_posts/modbus.assets/image-20230427173732124.png)
+  ![image-20230427173732124](F:/blog/source/_posts/modbus/image-20230427173732124.png)
 
 * 响应报文格式
 
-![image-20230427173656515](F:/blog/source/_posts/modbus.assets/image-20230427173656515.png)
+![image-20230427173656515](F:/blog/source/_posts/modbus/image-20230427173656515.png)
 
 * 结构、
 
@@ -277,7 +277,7 @@ Rx:000055-01 03 14 00 0A 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3
 
 #### 手册解释
 
-![image-20230427141150127](F:/blog/source/_posts/modbus.assets/image-20230427141150127.png)
+![image-20230427141150127](F:/blog/source/_posts/modbus/image-20230427141150127.png)
 
 #### 信息
 
@@ -300,7 +300,7 @@ Rx:000055-01 03 14 00 0A 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 3
 
 ## 通过网关
 
-![image-20230427163655007](F:/blog/source/_posts/modbus.assets/image-20230427163655007.png)
+![image-20230427163655007](F:/blog/source/_posts/modbus/image-20230427163655007.png)
 
 ## 编码
 

@@ -24,4 +24,4 @@ categories:
 
 # usb 转 ttl 连接开发板
 
-![image-20230731160005185](openwrt.assets/image-20230731160005185.png)
+![image-20230731160005185](openwrt/image-20230731160005185.png)
