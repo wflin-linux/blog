@@ -1,0 +1,31 @@
+name: Hexo Deployment
+
+on:
+  push:
+    branches:
+      - main  # 触发自动部署的分支，这里设置为 main 分支，可以根据你的实际情况修改
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14'  # 使用 Node.js 14 版本
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build
+        run: npx hexo generate  # 使用 Hexo 生成静态网页
+
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@3.6.2
+        with:
+          branch: gh-pages  # 将生成的静态网页部署到 gh-pages 分支，用于 GitHub Pages
+
