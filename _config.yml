@@ -110,14 +110,14 @@ pagination_dir: page
 theme: matery
 
 # Deployment
-## Docs: https://hexo.io/docs/deployment.html
-# deploy:
-#   type: 'git'
+# Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: 'git'
 
-#   # 发布到 GitHub
-#   repo: 
-#     - git@github.com:wflin-linux/wflin-linux.github.io.git
-#   branch: master
+  # 发布到 GitHub
+  repo: 
+    - git@github.com:wflin-linux/wflin-linux.github.io.git
+  branch: master
 
 
 live2d:
