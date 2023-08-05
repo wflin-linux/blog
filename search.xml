@@ -56,6 +56,33 @@
     
     
     <entry>
+      <title>samba</title>
+      <link href="/smba.html"/>
+      <url>/smba.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="安装samba"><a href="#安装samba" class="headerlink" title="安装samba"></a>安装samba</h1><blockquote><p>sudo apt-get install samba</p></blockquote><h1 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h1><blockquote><p>sudo nano /etc/samba/smb.conf</p></blockquote><p>向文件末尾添加内容</p><pre class="line-numbers language-shell"><code class="language-shell">[ubuntu] #标识随便起，只要不和上面重名    commen = ubuntu # 服务的名字    path = /home/ubuntu #共享路径    writable = yes #提供写的权限（一般这个就够了）     valid user = ubuntu #路径所属用户（我是用当前用户就叫 ubuntu ，所以我写这个）    create mask = 0777 #设置这个文件夹的权限<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><h1 id="连接samba"><a href="#连接samba" class="headerlink" title="连接samba"></a>连接samba</h1><ul><li><p>win+r 输入ip</p><blockquote><p>//:ip</p></blockquote></li><li><p>这时候会弹出认证界面，然后你输入用户名和密码后会发现拒绝连接，是因为 samba 的服务的认证不是走的 ubuntu 用户名和密码这一套，是它自己，但是在刚刚的过程中好向我们并没有设置密码的相关操作。</p></li></ul><h1 id="设置samba密码"><a href="#设置samba密码" class="headerlink" title="设置samba密码"></a>设置samba密码</h1><ul><li><blockquote><p>sudo smbpasswd -a ubuntu #刚刚配置的 samba 的用户名</p></blockquote></li><li><p>两次输入密码后就可以正常连接和使用了</p></li></ul><h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><ul><li>如果开启了防火墙的情况下需要放行端口</li><li>tcp<ul><li>139</li><li>445</li></ul></li><li>udp<ul><li>137</li><li>138</li></ul></li></ul><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> linux </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> linux </tag>
+            
+            <tag> iot </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>总线协议</title>
       <link href="/zong-xian-xie-yi.html"/>
       <url>/zong-xian-xie-yi.html</url>
