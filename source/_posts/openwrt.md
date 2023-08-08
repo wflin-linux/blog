@@ -11,7 +11,7 @@ toc: true
 mathjax: true
 summary: "openwrt学习"
 categories:
-  - openwrt
+  - 嵌入式
 ---
 
 # 环境准备
