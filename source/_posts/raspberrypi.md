@@ -69,8 +69,93 @@ categories:
 
 # 库编程
 
+![image-20230808141416928](raspberrypi/image-20230808141416928.png)
+
 ## 静态库
 
+* **静态函数库**：是在程序执行前（编译）就加入到目标程序中去了 ；
 
+* **优点**：运行快，发布程序无需提供静态库，因为已经在app中，移植方便
+
+* **缺点**：编译生成的文件大
 
 ## 动态库
+
+* **动态函数库**，是在程序执行时动态（临时）由目标程序去调用
+* **缺点**： 运行慢
+* **优点**： 小
+
+
+
+![image-20230808141527323](raspberrypi/image-20230808141527323.png)
+
+
+
+## 生成库
+
+### 静态库
+
+* 静态库的生成：格式：xxxx.a 
+
+  ```shell
+  gcc calcufuncs.c -c 生成xxx.o文件
+  
+  ar rcs libcalcufunc.a calcufuncs.o xxx.o文件生成xxx.a静态库文件
+  ```
+
+### 动态库
+
+* 动态库的生成：格式：xxxxx.so
+
+  ```shell
+  gcc -shared -fpic calcufuncs.c -o libcalc.so
+  
+  -shared 指定生成动态库
+  -fpic 标准，fPIC 选项作用于编译阶段,在生成目标文件时就得使用该选项,以生成位置无关的代码。
+  ```
+
+## 库的使用
+
+### 静态库
+
+* ```shell
+  gcc calculatorT.c -lcalcufunc -L ./ -o mainProStatic
+  
+  -lcalcufunc -l #是制定要用的动态库，库名砍头去尾
+  -L #告诉gcc编译器从-L制定的路径去找静态库。默认是从/usr/lib  /usr/local/lib去找
+  ```
+
+* eg:
+
+  > gcc calculatorT.c -lcalc -L ./ -o main libcalc.so
+
+### 动态库
+
+[推荐阅读博文]([linux动态库(.so)搜索路径(目录)设置方法 - zhangzheng08pku - 博客园 (cnblogs.com)](https://www.cnblogs.com/progamming/p/13043652.html))
+
+* Linux动态库的默认搜索路径是/lib和/usr/lib。动态库被创建后，一般都复制到这两个目录中。当程序执行时需要某动态库，并且该动 态库还未加载到内存中，则系统会自动到这两个默认搜索路径中去查找相应的动态库文件，然后加载该文件到内存中，这样程序就可以使用该动态库中的函数，以及该动态库的其它资源了。在Linux 中，动态库的搜索路径除了默认的搜索路径外，还可以通过以下三种方法来指定。
+
+  * 在配置文件/etc/ld.so.conf中指定动态库搜索路径；
+
+    ```shell
+    vi /etc/ld.so.conf #添加 lib目录（绝对路径）
+    ldconfig
+    ```
+
+    
+
+  * 通过环境变量LD_LIBRARY_PATH指定动态库搜索路径；
+
+    ```shell
+    export LD_LIBRARY_PATH=”LD_LIBRARY_PATH:libpath”
+    ```
+
+    
+
+  * 在编译目标代码时指定该程序的动态库搜索路径。
+
+    ```shell
+    还可以在编译目标代码时指定程序的动态库搜索路径。通过gcc 的参数”-Wl,-rpath,”指定
+    ```
+
+    
