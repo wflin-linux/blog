@@ -31,6 +31,33 @@
     
     
     <entry>
+      <title>RaspberryPi</title>
+      <link href="/raspberrypi.html"/>
+      <url>/raspberrypi.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="下载和烧写镜像"><a href="#下载和烧写镜像" class="headerlink" title="下载和烧写镜像"></a>下载和烧写镜像</h1><ul><li>从官网下载树莓派镜像，使用烧写工具 balena-etcher 烧录镜像</li></ul><h2 id="串口登录"><a href="#串口登录" class="headerlink" title="串口登录"></a>串口登录</h2><ul><li><p>将系统烧写到 SD 卡后，重新拔插 SD 卡，连接到系统 usb，电脑会出现树莓派的 boot 分区</p></li><li><p>修改 config.txt 文件，将内容追加到文件末尾（停止了蓝牙，解除了对串口的占用）</p><blockquote><p>dtoverlay=pi3-miniuart-bt</p></blockquote></li><li><p>覆盖 cmdline.txt，万一失效，所以建议先把这个文件备份一份</p><blockquote><p>dwc_otg.lpm_enable=0 console=tty1 console=serial0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait</p></blockquote></li><li><p>使用 USB-TTL转换模块如图连接线,TTL 的 TXD 连接到树莓派的 RXD，另一根也反向接线便可</p><img src="/raspberrypi/aHR0cHM6Ly9zeWpzeHhqeS5naXRodWIuaW8vbXlibG9nL2Fzc2V0cy8xLzIwMTgwNjIyLTk5ZjRjNWE1LnBuZw.png" title="aHR0cHM6Ly9zeWpzeHhqeS5naXRodWIuaW8vbXlibG9nL2Fzc2V0cy8xLzIwMTgwNjIyLTk5ZjRjNWE1LnBuZw"></li></ul><ul><li>线接好后插入电脑（电脑有安装了 USB 转串口驱动）在设备管理器看看使用的是哪个 COMS，使用终端工具选择串口和波特率进行连接便可</li></ul><h2 id="SSH登录-我常用"><a href="#SSH登录-我常用" class="headerlink" title="SSH登录(我常用)"></a>SSH登录(我常用)</h2><ul><li><p>烧写好镜像后，一样把 SD 卡插入电脑，显示出 boot 分区</p></li><li><p>在boot目录添加两个文件</p><ul><li><p>ssh（不要后缀，直接名字就叫 ssh，这样就可以开启 ssh）</p></li><li><p>创建并添加一个文件 <code>wpa_supplicant.conf</code></p><pre class="line-numbers language-txt"><code class="language-txt">ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdevupdate_config=1country=CNnetwork={        ssid="无线网名称"        psk="无线网密码"}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li></ul></li><li><p>添加好两个文件后直接上电，在路由器的管理后台(或者 windows 直接开热点，连接Windows的热点)查看树莓派的IP</p></li><li><p>然后使用ssh 登录到树莓派</p></li><li><p>默认账户：pi</p></li><li><p>默认密码：raspberry</p></li></ul><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> 嵌入式 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> c </tag>
+            
+            <tag> Linux </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>samba</title>
       <link href="/smba.html"/>
       <url>/smba.html</url>

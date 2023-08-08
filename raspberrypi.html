@@ -6,14 +6,16 @@
 
 <head><meta name="generator" content="Hexo 3.9.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Lua, wflin 的博客">
+    <meta name="keywords" content="RaspberryPi, wflin 的博客">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="lua【为了解决高并发秒杀商品冗余问题】lua运行的形式
-lua -i 交互式编程
-$ lua -i 
-$ Lua 5.3.0  Copyright (C) 1994-2015 Lua.org, PUC-Rio
-&gt; print(&#34;Hello">
+    <meta name="description" content="下载和烧写镜像
+从官网下载树莓派镜像，使用烧写工具 balena-etcher 烧录镜像
+
+串口登录
+将系统烧写到 SD 卡后，重新拔插 SD 卡，连接到系统 usb，电脑会出现树莓派的 boot 分区
+
+修改 config.txt 文件，">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -21,7 +23,7 @@ $ Lua 5.3.0  Copyright (C) 1994-2015 Lua.org, PUC-Rio
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>Lua | wflin 的博客</title>
+    <title>RaspberryPi | wflin 的博客</title>
     <link rel="icon" type="image/png" href="/favicon.png">
 
     <link rel="stylesheet" type="text/css" href="/libs/awesome/css/font-awesome.min.css">
@@ -578,13 +580,13 @@ $ Lua 5.3.0  Copyright (C) 1994-2015 Lua.org, PUC-Rio
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/8.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/11.jpg')">
     <div class="container">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
                     <div class="description center-align post-title">
-                        Lua
+                        RaspberryPi
                     </div>
                 </div>
             </div>
@@ -696,8 +698,12 @@ $ Lua 5.3.0  Copyright (C) 1994-2015 Lua.org, PUC-Rio
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/lua/" target="_blank">
-                                <span class="chip bg-color">lua</span>
+                            <a href="/tags/c/" target="_blank">
+                                <span class="chip bg-color">c</span>
+                            </a>
+                        
+                            <a href="/tags/Linux/" target="_blank">
+                                <span class="chip bg-color">Linux</span>
                             </a>
                         
                     </div>
@@ -708,8 +714,8 @@ $ Lua 5.3.0  Copyright (C) 1994-2015 Lua.org, PUC-Rio
                     <div class="post-cate">
                         <i class="fa fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/lua/" class="post-category" target="_blank">
-                                lua
+                            <a href="/categories/嵌入式/" class="post-category" target="_blank">
+                                嵌入式
                             </a>
                         
                     </div>
@@ -720,7 +726,7 @@ $ Lua 5.3.0  Copyright (C) 1994-2015 Lua.org, PUC-Rio
             <div class="post-info">
                 <div class="post-date info-break-policy">
                     <i class="fa fa-calendar-minus-o fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-08-27
+                    2023-06-10
                 </div>
 
                 <div class="post-author info-break-policy">
@@ -734,14 +740,14 @@ $ Lua 5.3.0  Copyright (C) 1994-2015 Lua.org, PUC-Rio
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.8k
+                        437
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        7 分
+                        1 分
                     </div>
                     
                 
@@ -758,400 +764,58 @@ $ Lua 5.3.0  Copyright (C) 1994-2015 Lua.org, PUC-Rio
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="lua【为了解决高并发秒杀商品冗余问题】"><a href="#lua【为了解决高并发秒杀商品冗余问题】" class="headerlink" title="lua【为了解决高并发秒杀商品冗余问题】"></a>lua【为了解决高并发秒杀商品冗余问题】</h1><h2 id="lua运行的形式"><a href="#lua运行的形式" class="headerlink" title="lua运行的形式"></a>lua运行的形式</h2><ul>
-<li><p>lua -i 交互式编程</p>
-<pre class="line-numbers language-lua"><code class="language-lua">$ lua <span class="token operator">-</span>i 
-$ Lua <span class="token number">5.3</span><span class="token number">.0</span>  <span class="token function">Copyright</span> <span class="token punctuation">(</span>C<span class="token punctuation">)</span> <span class="token number">1994</span><span class="token operator">-</span><span class="token number">2015</span> Lua<span class="token punctuation">.</span>org<span class="token punctuation">,</span> PUC<span class="token operator">-</span>Rio
-<span class="token operator">></span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Hello World！"</span><span class="token punctuation">)</span>
-Hello World！
-<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
+                <h1 id="下载和烧写镜像"><a href="#下载和烧写镜像" class="headerlink" title="下载和烧写镜像"></a>下载和烧写镜像</h1><ul>
+<li>从官网下载树莓派镜像，使用烧写工具 balena-etcher 烧录镜像</li>
 </ul>
-<ul>
-<li><p>脚本式编程</p>
-<ul>
-<li><p>hello.lua</p>
-<pre class="line-numbers language-lua"><code class="language-lua"><span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Hello World！"</span><span class="token punctuation">)</span>
-<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"www.runoob.com"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<h2 id="串口登录"><a href="#串口登录" class="headerlink" title="串口登录"></a>串口登录</h2><ul>
+<li><p>将系统烧写到 SD 卡后，重新拔插 SD 卡，连接到系统 usb，电脑会出现树莓派的 boot 分区</p>
 </li>
-</ul>
-</li>
-</ul>
-<pre><code>```lua
-$ lua hello.lua
-Hello World！
-www.runoob.com
-```</code></pre><ul>
-<li><p>也可以修改为一下脚本实现（在开头添加：#!/usr/local/bin/lua）</p>
-<pre class="line-numbers language-lua"><code class="language-lua"><span class="token comment" spellcheck="true">#!/usr/local/bin/lua</span>
-
-<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Hello World！"</span><span class="token punctuation">)</span>
-<span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"www.runoob.com"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>以上代码中，我们指定了 Lua 的解释器 /usr/local/bin directory。加上 # 号标记解释器会忽略它。接下来我们为脚本添加可执行权限，并执行：chmod +x hello.lua</p>
-<pre class="line-numbers language-lua"><code class="language-lua"><span class="token punctuation">.</span><span class="token operator">/</span>hello<span class="token punctuation">.</span>lua 
-Hello World！
-www<span class="token punctuation">.</span>runoob<span class="token punctuation">.</span>com<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-<h2 id="注释方式"><a href="#注释方式" class="headerlink" title="注释方式"></a>注释方式</h2><ul>
-<li><p>单行注释</p>
+<li><p>修改 config.txt 文件，将内容追加到文件末尾（停止了蓝牙，解除了对串口的占用）</p>
 <blockquote>
-<p><strong>–</strong></p>
+<p>dtoverlay=pi3-miniuart-bt</p>
 </blockquote>
 </li>
-<li><p>多行注释</p>
+<li><p>覆盖 cmdline.txt，万一失效，所以建议先把这个文件备份一份</p>
 <blockquote>
-<p>–[[</p>
-<p>​     多行注释</p>
-<p>–]]</p>
+<p>dwc_otg.lpm_enable=0 console=tty1 console=serial0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait</p>
 </blockquote>
 </li>
-<li><p>Lua 是一个区分大小写的编程语言</p>
-</li>
-<li><p>变量命名规则和C语言的命名规则一致</p>
-</li>
-</ul>
-<h2 id="保留关键字"><a href="#保留关键字" class="headerlink" title="保留关键字"></a>保留关键字</h2><ul>
-<li><p>以下列出了 Lua 的保留关键词。保留关键字不能作为常量或变量或其他用户自定义标示符：</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>and</td>
-<td>break</td>
-<td>do</td>
-<td>else</td>
-</tr>
-<tr>
-<td>elseif</td>
-<td>end</td>
-<td>false</td>
-<td>for</td>
-</tr>
-<tr>
-<td>function</td>
-<td>if</td>
-<td>in</td>
-<td>local</td>
-</tr>
-<tr>
-<td>nil</td>
-<td>not</td>
-<td>or</td>
-<td>repeat</td>
-</tr>
-<tr>
-<td>return</td>
-<td>then</td>
-<td>true</td>
-<td>until</td>
-</tr>
-<tr>
-<td>while</td>
-<td>goto</td>
-<td></td>
-<td></td>
-</tr>
-</tbody></table>
-</li>
-<li><p>一般约定，以下划线开头连接一串大写字母的名字（比如 _VERSION）被保留用于 Lua 内部全局变量。</p>
-</li>
-</ul>
-<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><h3 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h3><ul>
-<li><p>在默认情况下，变量总是认为是全局的。</p>
-</li>
-<li><p>全局变量不需要声明，给一个变量赋值后即创建了这个全局变量，访问一个没有初始化的全局变量也不会出错，只不过得到的结果是：nil</p>
-<pre class="line-numbers language-lua"><code class="language-lua"><span class="token operator">></span> <span class="token function">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
-<span class="token keyword">nil</span>
-<span class="token operator">></span> b<span class="token operator">=</span><span class="token number">10</span>
-<span class="token operator">></span> <span class="token function">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>
-<span class="token number">10</span>
-<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>如果你想删除一个全局变量，只需要将变量赋值为nil。</p>
-<pre class="line-numbers language-lua"><code class="language-lua">b <span class="token operator">=</span> <span class="token keyword">nil</span>
-<span class="token function">print</span><span class="token punctuation">(</span>b<span class="token punctuation">)</span>      <span class="token comment" spellcheck="true">--> nil</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-</li>
-<li><p>这样变量b就好像从没被使用过一样。换句话说, 当且仅当一个变量不等于nil时，这个变量即存在。</p>
-</li>
-</ul>
-<h2 id="Lua-数据类型"><a href="#Lua-数据类型" class="headerlink" title="Lua 数据类型"></a>Lua 数据类型</h2><ul>
-<li><p>Lua 是动态类型语言，变量不要类型定义,只需要为变量赋值。 值可以存储在变量中，作为参数传递或结果返回。</p>
-</li>
-<li><p>Lua 中有 8 个基本类型分别为：nil、boolean、number、string、userdata、function、thread 和 table。</p>
-<table>
-<thead>
-<tr>
-<th align="left">数据类型</th>
-<th align="left">描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">nil</td>
-<td align="left">这个最简单，只有值nil属于该类，表示一个无效值（在条件表达式中相当于false）。</td>
-</tr>
-<tr>
-<td align="left">boolean</td>
-<td align="left">包含两个值：false和true。</td>
-</tr>
-<tr>
-<td align="left">number</td>
-<td align="left">表示双精度类型的实浮点数</td>
-</tr>
-<tr>
-<td align="left">string</td>
-<td align="left">字符串由一对双引号或单引号来表示</td>
-</tr>
-<tr>
-<td align="left">function</td>
-<td align="left">由 C 或 Lua 编写的函数</td>
-</tr>
-<tr>
-<td align="left">userdata</td>
-<td align="left">表示任意存储在变量中的C数据结构</td>
-</tr>
-<tr>
-<td align="left">thread</td>
-<td align="left">表示执行的独立线路，用于执行协同程序</td>
-</tr>
-<tr>
-<td align="left">table</td>
-<td align="left">Lua 中的表（table）其实是一个”关联数组”（associative arrays），数组的索引可以是数字、字符串或表类型。在 Lua 里，table 的创建是通过”构造表达式”来完成，最简单构造表达式是{}，用来创建一个空表。</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>我们可以使用 type 函数测试给定变量或者值的类型：</p>
-<pre class="line-numbers language-lua"><code class="language-lua"><span class="token function">print</span><span class="token punctuation">(</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token string">"Hello world"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>      <span class="token comment" spellcheck="true">--> string</span>
-<span class="token function">print</span><span class="token punctuation">(</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token number">10.4</span><span class="token operator">*</span><span class="token number">3</span><span class="token punctuation">)</span><span class="token punctuation">)</span>             <span class="token comment" spellcheck="true">--> number</span>
-<span class="token function">print</span><span class="token punctuation">(</span><span class="token function">type</span><span class="token punctuation">(</span>print<span class="token punctuation">)</span><span class="token punctuation">)</span>              <span class="token comment" spellcheck="true">--> function</span>
-<span class="token function">print</span><span class="token punctuation">(</span><span class="token function">type</span><span class="token punctuation">(</span>type<span class="token punctuation">)</span><span class="token punctuation">)</span>               <span class="token comment" spellcheck="true">--> function</span>
-<span class="token function">print</span><span class="token punctuation">(</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token keyword">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span>               <span class="token comment" spellcheck="true">--> boolean</span>
-<span class="token function">print</span><span class="token punctuation">(</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token keyword">nil</span><span class="token punctuation">)</span><span class="token punctuation">)</span>                <span class="token comment" spellcheck="true">--> nil</span>
-<span class="token function">print</span><span class="token punctuation">(</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token function">type</span><span class="token punctuation">(</span>X<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">)</span>            <span class="token comment" spellcheck="true">--> string</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-<h3 id="nil（空）"><a href="#nil（空）" class="headerlink" title="nil（空）"></a>nil（空）</h3><ul>
-<li><p>nil 类型表示一种没有任何有效值，它只有一个值 – nil，例如打印一个没有赋值的变量，便会输出一个 nil 值：</p>
-<pre class="line-numbers language-lua"><code class="language-lua"><span class="token operator">></span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token function">type</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">nil</span>
-<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<li><p>使用 USB-TTL转换模块如图连接线,TTL 的 TXD 连接到树莓派的 RXD，另一根也反向接线便可</p>
+<img src="/raspberrypi/aHR0cHM6Ly9zeWpzeHhqeS5naXRodWIuaW8vbXlibG9nL2Fzc2V0cy8xLzIwMTgwNjIyLTk5ZjRjNWE1LnBuZw.png" title="aHR0cHM6Ly9zeWpzeHhqeS5naXRodWIuaW8vbXlibG9nL2Fzc2V0cy8xLzIwMTgwNjIyLTk5ZjRjNWE1LnBuZw">
+
+
+
 </li>
 </ul>
 <ul>
-<li><p>对于全局变量和 table，nil 还有一个”删除”作用，给全局变量或者 table 表里的变量赋一个 nil 值，等同于把它们删掉，执行下面代码就知：</p>
-<pre class="line-numbers language-lua"><code class="language-lua">tab1 <span class="token operator">=</span> <span class="token punctuation">{</span> key1 <span class="token operator">=</span> <span class="token string">"val1"</span><span class="token punctuation">,</span> key2 <span class="token operator">=</span> <span class="token string">"val2"</span><span class="token punctuation">,</span> <span class="token string">"val3"</span> <span class="token punctuation">}</span>
-<span class="token keyword">for</span> k<span class="token punctuation">,</span> v <span class="token keyword">in</span> <span class="token function">pairs</span><span class="token punctuation">(</span>tab1<span class="token punctuation">)</span> <span class="token keyword">do</span>
-    <span class="token function">print</span><span class="token punctuation">(</span>k <span class="token operator">..</span> <span class="token string">" - "</span> <span class="token operator">..</span> v<span class="token punctuation">)</span>
-<span class="token keyword">end</span>
-<span class="token comment" spellcheck="true">-------------结果---------------</span>
-<span class="token operator">></span>
-<span class="token number">1</span> <span class="token operator">-</span> val3
-key1 <span class="token operator">-</span> val1
-key2 <span class="token operator">-</span> val2
-<span class="token operator">></span>
-
-<span class="token comment" spellcheck="true">-- 用 nil 删除 table 的第一个元素</span>
-tab1<span class="token punctuation">.</span>key1 <span class="token operator">=</span> <span class="token keyword">nil</span>
-<span class="token keyword">for</span> k<span class="token punctuation">,</span> v <span class="token keyword">in</span> <span class="token function">pairs</span><span class="token punctuation">(</span>tab1<span class="token punctuation">)</span> <span class="token keyword">do</span>
-    <span class="token function">print</span><span class="token punctuation">(</span>k <span class="token operator">..</span> <span class="token string">" - "</span> <span class="token operator">..</span> v<span class="token punctuation">)</span>
-<span class="token keyword">end</span>
-
-<span class="token comment" spellcheck="true">-------------结果-----------------</span>
-<span class="token operator">></span>
-<span class="token number">1</span> <span class="token operator">-</span> val3
-key2 <span class="token operator">-</span> val2
-<span class="token operator">></span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
+<li>线接好后插入电脑（电脑有安装了 USB 转串口驱动）在设备管理器看看使用的是哪个 COMS，使用终端工具选择串口和波特率进行连接便可</li>
 </ul>
-<h3 id="nil-作为比较时应该加上双引号-“"><a href="#nil-作为比较时应该加上双引号-“" class="headerlink" title="nil 作为比较时应该加上双引号 “"></a>nil 作为比较时应该加上双引号 <code>“</code></h3><ul>
-<li><pre class="line-numbers language-lua"><code class="language-lua"><span class="token operator">></span> <span class="token function">type</span><span class="token punctuation">(</span>X<span class="token punctuation">)</span>
-<span class="token keyword">nil</span>
-<span class="token operator">></span> <span class="token function">type</span><span class="token punctuation">(</span>X<span class="token punctuation">)</span><span class="token operator">==</span><span class="token keyword">nil</span>
-<span class="token keyword">false</span>
-<span class="token operator">></span> <span class="token function">type</span><span class="token punctuation">(</span>X<span class="token punctuation">)</span><span class="token operator">==</span><span class="token string">"nil"</span>
-<span class="token keyword">true</span>
-<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="SSH登录-我常用"><a href="#SSH登录-我常用" class="headerlink" title="SSH登录(我常用)"></a>SSH登录(我常用)</h2><ul>
+<li><p>烧写好镜像后，一样把 SD 卡插入电脑，显示出 boot 分区</p>
 </li>
-<li><p><strong>type(X)==nil</strong> 结果为 <strong>false</strong> 的原因是 type(X) 实质是返回的 <strong>“nil”</strong> 字符串，是一个 string 类型</p>
-<pre class="line-numbers language-lua"><code class="language-lua"><span class="token function">type</span><span class="token punctuation">(</span><span class="token function">type</span><span class="token punctuation">(</span>X<span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token operator">==</span>string<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
-</li>
-</ul>
-<h3 id="boolean（布尔）"><a href="#boolean（布尔）" class="headerlink" title="boolean（布尔）"></a>boolean（布尔）</h3><ul>
-<li><p>boolean 类型只有两个可选值：true（真） 和 false（假），Lua 把 false 和 nil 看作是 false，其他的都为 true，数字 0 也是 true:</p>
-</li>
-<li><p>实例  <code>test.lua</code></p>
-<pre class="line-numbers language-lua"><code class="language-lua"><span class="token function">print</span><span class="token punctuation">(</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token keyword">true</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token function">print</span><span class="token punctuation">(</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token keyword">false</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token function">print</span><span class="token punctuation">(</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token keyword">nil</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-
-<span class="token keyword">if</span> <span class="token keyword">false</span> <span class="token keyword">or</span> <span class="token keyword">nil</span> <span class="token keyword">then</span>
-    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"至少有一个是 true"</span><span class="token punctuation">)</span>
-<span class="token keyword">else</span>
-    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"false 和 nil 都为 false"</span><span class="token punctuation">)</span>
-<span class="token keyword">end</span>
-
-<span class="token keyword">if</span> <span class="token number">0</span> <span class="token keyword">then</span>
-    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"数字 0 是 true"</span><span class="token punctuation">)</span>
-<span class="token keyword">else</span>
-    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"数字 0 为 false"</span><span class="token punctuation">)</span>
-<span class="token keyword">end</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>代码执行结果</p>
-<pre class="line-numbers language-lua"><code class="language-lua">$ lua test<span class="token punctuation">.</span>lua 
-boolean
-boolean
-<span class="token keyword">nil</span>
-<span class="token keyword">false</span> 和 <span class="token keyword">nil</span> 都为 <span class="token keyword">false</span>
-数字 <span class="token number">0</span> 是 <span class="token keyword">true</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-<h3 id="number（数字）"><a href="#number（数字）" class="headerlink" title="number（数字）"></a>number（数字）</h3><ul>
-<li><p>Lua 默认只有一种 number 类型 – double（双精度）类型（默认类型可以修改 luaconf.h 里的定义），以下几种写法都被看作是 number 类型</p>
-</li>
-<li><p>实例</p>
-<pre class="line-numbers language-lua"><code class="language-lua"><span class="token function">print</span><span class="token punctuation">(</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token function">print</span><span class="token punctuation">(</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token number">2.2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token function">print</span><span class="token punctuation">(</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token number">0.2</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token function">print</span><span class="token punctuation">(</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token number">2e+1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token function">print</span><span class="token punctuation">(</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token number">0.2e-1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token function">print</span><span class="token punctuation">(</span><span class="token function">type</span><span class="token punctuation">(</span><span class="token number">7.8263692594256e-06</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>以上代码执行结果</p>
-<pre class="line-numbers language-lua"><code class="language-lua">number
-number
-number
-number
-number
-number<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-<h3 id="String-（字符串）"><a href="#String-（字符串）" class="headerlink" title="String （字符串）"></a>String （字符串）</h3><ul>
-<li><p>字符串由一对双引号或者单引号表示</p>
-<pre class="line-numbers language-lua"><code class="language-lua">string1 <span class="token operator">=</span> <span class="token string">"this is string1"</span>
-string2 <span class="token operator">=</span> <span class="token string">'this is string2'</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-</li>
-<li><p>也可以用 2 个方括号 “[[]]” 来表示 “一块” 字符串</p>
-</li>
-<li><p>实例：<code>test.lua</code></p>
-<pre class="line-numbers language-lua"><code class="language-lua">html <span class="token operator">=</span> <span class="token string">[[
-&lt;html>
-&lt;head>&lt;/head>
-&lt;body>
-    &lt;a href="http://www.wflin.ltd/">wflin&lt;/a>
-&lt;/body>
-&lt;/html>
-]]</span>
-<span class="token function">print</span><span class="token punctuation">(</span>html<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>以下代码执行结果为</p>
-<pre class="line-numbers language-html"><code class="language-html"><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>html</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>head</span><span class="token punctuation">></span></span><span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>head</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>body</span><span class="token punctuation">></span></span>
-    <span class="token tag"><span class="token tag"><span class="token punctuation">&lt;</span>a</span> <span class="token attr-name">href</span><span class="token attr-value"><span class="token punctuation">=</span><span class="token punctuation">"</span>http://www.wflin.ltd/<span class="token punctuation">"</span></span><span class="token punctuation">></span></span>wflin<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>a</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>body</span><span class="token punctuation">></span></span>
-<span class="token tag"><span class="token tag"><span class="token punctuation">&lt;/</span>html</span><span class="token punctuation">></span></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>在对一个数字字符串上进行算术操作时，Lua 会尝试将这个数字字符串转成一个数字:</p>
-<pre class="line-numbers language-lua"><code class="language-lua"><span class="token operator">></span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"2"</span> <span class="token operator">+</span> <span class="token number">6</span><span class="token punctuation">)</span>
-<span class="token number">8.0</span>
-<span class="token operator">></span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"2"</span> <span class="token operator">+</span> <span class="token string">"6"</span><span class="token punctuation">)</span>
-<span class="token number">8.0</span>
-<span class="token operator">></span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"2 + 6"</span><span class="token punctuation">)</span>
-<span class="token number">2</span> <span class="token operator">+</span> <span class="token number">6</span>
-<span class="token operator">></span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"-2e2"</span> <span class="token operator">*</span> <span class="token string">"6"</span><span class="token punctuation">)</span>
-<span class="token operator">-</span><span class="token number">1200.0</span>
-<span class="token operator">></span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"error"</span> <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span>
-stdin<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">:</span> attempt to perform arithmetic on a string value
-stack traceback<span class="token punctuation">:</span>
-        stdin<span class="token punctuation">:</span><span class="token number">1</span><span class="token punctuation">:</span> <span class="token keyword">in</span> main chunk
-        <span class="token punctuation">[</span>C<span class="token punctuation">]</span><span class="token punctuation">:</span> <span class="token keyword">in</span> ?
-<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>以上代码中”error” + 1执行报错了，字符串连接使用的是 <strong><code>..</code></strong> ，如</p>
-<pre class="line-numbers language-lua"><code class="language-lua"><span class="token operator">></span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"a"</span> <span class="token operator">..</span> <span class="token string">'b'</span><span class="token punctuation">)</span>
-ab
-<span class="token operator">></span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token number">157</span> <span class="token operator">..</span> <span class="token number">428</span><span class="token punctuation">)</span>
-<span class="token number">157428</span>
-<span class="token operator">></span> <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>使用 # 来计算字符串的长度，放在字符串前面，如下实例</p>
-<pre class="line-numbers language-lua"><code class="language-lua"><span class="token operator">></span> len <span class="token operator">=</span> <span class="token string">"www.wflin.ltd"</span>
-<span class="token operator">></span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token operator">#</span>len<span class="token punctuation">)</span>
-<span class="token number">12</span>
-<span class="token operator">></span> <span class="token function">print</span><span class="token punctuation">(</span><span class="token operator">#</span><span class="token string">"www.wflin.ltd"</span><span class="token punctuation">)</span>
-<span class="token number">14</span>
-<span class="token operator">></span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
-<h3 id="table（表）"><a href="#table（表）" class="headerlink" title="table（表）"></a>table（表）</h3><ul>
-<li><p>在 Lua 里，table 的创建是通过”构造表达式”来完成，最简单构造表达式是{}，用来创建一个空表。也可以在表里添加一些数据，直接初始化表</p>
-</li>
-<li><p>实例 <code>table_test.lua</code></p>
-<pre class="line-numbers language-lua"><code class="language-lua"><span class="token comment" spellcheck="true">-- 创建一个空的 table</span>
-<span class="token keyword">local</span> tbl1 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-
-<span class="token comment" spellcheck="true">-- 直接初始表</span>
-<span class="token keyword">local</span> tbl2 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"apple"</span><span class="token punctuation">,</span> <span class="token string">"pear"</span><span class="token punctuation">,</span> <span class="token string">"orange"</span><span class="token punctuation">,</span> <span class="token string">"grape"</span><span class="token punctuation">}</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-</ul>
+<li><p>在boot目录添加两个文件</p>
 <ul>
-<li><p>Lua 中的表（table）其实是一个”关联数组”（associative arrays），数组的索引可以是数字或者是字符串。</p>
+<li><p>ssh（不要后缀，直接名字就叫 ssh，这样就可以开启 ssh）</p>
 </li>
-<li><p>实例</p>
-<pre class="line-numbers language-lua"><code class="language-lua"><span class="token comment" spellcheck="true">-- table_test.lua 脚本文件</span>
-a <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-a<span class="token punctuation">[</span><span class="token string">"key"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"value"</span>
-key <span class="token operator">=</span> <span class="token number">10</span>
-a<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">22</span>
-a<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">=</span> a<span class="token punctuation">[</span>key<span class="token punctuation">]</span> <span class="token operator">+</span> <span class="token number">11</span>
-<span class="token keyword">for</span> k<span class="token punctuation">,</span> v <span class="token keyword">in</span> <span class="token function">pairs</span><span class="token punctuation">(</span>a<span class="token punctuation">)</span> <span class="token keyword">do</span>
-    <span class="token function">print</span><span class="token punctuation">(</span>k <span class="token operator">..</span> <span class="token string">" : "</span> <span class="token operator">..</span> v<span class="token punctuation">)</span>
-<span class="token keyword">end</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<li><p>创建并添加一个文件 <code>wpa_supplicant.conf</code></p>
+<pre class="line-numbers language-txt"><code class="language-txt">ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+country=CN
+
+network={
+        ssid="无线网名称"
+        psk="无线网密码"
+}<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
-<li><p>脚本执行结果为</p>
-<pre class="line-numbers language-lua"><code class="language-lua">$ lua table_test<span class="token punctuation">.</span>lua 
-key <span class="token punctuation">:</span> value
-<span class="token number">10</span> <span class="token punctuation">:</span> <span class="token number">33</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+</ul>
 </li>
-<li><p>不同于其他语言的数组把 0 作为数组的初始索引，在 Lua 里表的默认初始索引一般以 1 开始</p>
+<li><p>添加好两个文件后直接上电，在路由器的管理后台(或者 windows 直接开热点，连接Windows的热点)查看树莓派的IP</p>
 </li>
-<li><p>实例</p>
-<pre class="line-numbers language-lua"><code class="language-lua"><span class="token comment" spellcheck="true">-- table_test2.lua 脚本文件</span>
-<span class="token keyword">local</span> tbl <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token string">"apple"</span><span class="token punctuation">,</span> <span class="token string">"pear"</span><span class="token punctuation">,</span> <span class="token string">"orange"</span><span class="token punctuation">,</span> <span class="token string">"grape"</span><span class="token punctuation">}</span>
-<span class="token keyword">for</span> key<span class="token punctuation">,</span> val <span class="token keyword">in</span> <span class="token function">pairs</span><span class="token punctuation">(</span>tbl<span class="token punctuation">)</span> <span class="token keyword">do</span>
-    <span class="token function">print</span><span class="token punctuation">(</span><span class="token string">"Key"</span><span class="token punctuation">,</span> key<span class="token punctuation">)</span>
-<span class="token keyword">end</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<li><p>然后使用ssh 登录到树莓派</p>
 </li>
-<li><p>执行结果为</p>
-<pre class="line-numbers language-lua"><code class="language-lua">$ lua table_test2<span class="token punctuation">.</span>lua 
-Key    <span class="token number">1</span>
-Key    <span class="token number">2</span>
-Key    <span class="token number">3</span>
-Key    <span class="token number">4</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<li><p>默认账户：pi</p>
 </li>
-<li><p>table 不会固定长度大小，有新数据添加时 table 长度会自动增长，没初始的 table 都是 nil。</p>
-</li>
-<li><p>实例</p>
-<pre class="line-numbers language-lua"><code class="language-lua"><span class="token comment" spellcheck="true">-- table_test3.lua 脚本文件</span>
-a3 <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
-<span class="token keyword">for</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span> <span class="token keyword">do</span>
-    a3<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> i
-<span class="token keyword">end</span>
-a3<span class="token punctuation">[</span><span class="token string">"key"</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">"val"</span>
-<span class="token function">print</span><span class="token punctuation">(</span>a3<span class="token punctuation">[</span><span class="token string">"key"</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
-<span class="token function">print</span><span class="token punctuation">(</span>a3<span class="token punctuation">[</span><span class="token string">"none"</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-</li>
-<li><p>执行结果为</p>
-<pre class="line-numbers language-lua"><code class="language-lua">$ lua table_test3<span class="token punctuation">.</span>lua 
-val
-<span class="token keyword">nil</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<li><p>默认密码：raspberry</p>
 </li>
 </ul>
 <script>
@@ -1198,7 +862,7 @@ val
                     </span>
                     <a href="https://wflin.ltd" class="b-link-green">wflin 的博客</a>
                     <i class="fa fa-angle-right fa-lg fa-fw text-color"></i>
-                    <a href="/lua.html" class="b-link-green">Lua</a>
+                    <a href="/raspberrypi.html" class="b-link-green">RaspberryPi</a>
                 </p>
             </div>
 
@@ -1224,31 +888,31 @@ val
             <div class="article-badge left-badge text-color">
                 <i class="fa fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/modbus.html">
+                <a href="/openwrt.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/2.jpg" class="responsive-img" alt="modbus">
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="openwrt">
                         
-                        <span class="card-title">modbus</span>
+                        <span class="card-title">openwrt</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            modbus
+                            openwrt学习
                         
                     </div>
                     <div class="publish-info">
                         <span class="publish-date">
-                            <i class="fa fa-clock-o fa-fw icon-date"></i>2020-06-01
+                            <i class="fa fa-clock-o fa-fw icon-date"></i>2023-07-10
                         </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/iot/" class="post-category" target="_blank">
-                                    iot
+                            <a href="/categories/openwrt/" class="post-category" target="_blank">
+                                    openwrt
                                 </a>
                             
                             
@@ -1262,8 +926,8 @@ val
                         <span class="chip bg-color">iot</span>
                     </a>
                     
-                    <a href="/tags/modbus/" target="_blank">
-                        <span class="chip bg-color">modbus</span>
+                    <a href="/tags/openwrt/" target="_blank">
+                        <span class="chip bg-color">openwrt</span>
                     </a>
                     
                 </div>
@@ -1277,31 +941,31 @@ val
                 下一篇&nbsp;<i class="fa fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/springcloud.html">
+                <a href="/smba.html">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Springcloud">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="samba">
                         
-                        <span class="card-title">Springcloud</span>
+                        <span class="card-title">samba</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            springcloud 学习笔记
+                            samba 服务安装和关联windwos
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="fa fa-clock-o fa-fw icon-date"></i>2019-08-27
+                                <i class="fa fa-clock-o fa-fw icon-date"></i>2023-06-10
                             </span>
                         <span class="publish-author">
                             
                             <i class="fa fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/Java/" class="post-category" target="_blank">
-                                    Java
+                            <a href="/categories/linux/" class="post-category" target="_blank">
+                                    linux
                                 </a>
                             
                             
@@ -1311,8 +975,12 @@ val
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/java/" target="_blank">
-                        <span class="chip bg-color">java</span>
+                    <a href="/tags/linux/" target="_blank">
+                        <span class="chip bg-color">linux</span>
+                    </a>
+                    
+                    <a href="/tags/iot/" target="_blank">
+                        <span class="chip bg-color">iot</span>
                     </a>
                     
                 </div>
