@@ -742,7 +742,7 @@ sudo nano /etc/samba/smb.conf
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        316
+                        357
                     </div>
                     
 
@@ -779,6 +779,17 @@ sudo nano /etc/samba/smb.conf
     writable = yes #提供写的权限（一般这个就够了） 
     valid user = ubuntu #路径所属用户（我是用当前用户就叫 ubuntu ，所以我写这个）
     create mask = 0777 #设置这个文件夹的权限<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<p>重启程序</p>
+<blockquote>
+<p>sudo /etc/init.d/smbd restart</p>
+</blockquote>
+<p>集合</p>
+<blockquote>
+<p>sudo apt-get install samba</p>
+<p>sudo smbpasswd -a ubuntu</p>
+<p>[ubuntu]<br>   commen = ubuntu<br>   path = /home/ubuntu<br>   writable = yes<br>   valid user = ubuntu<br>   create mask = 0777</p>
+<p>sudo /etc/init.d/smbd restart</p>
+</blockquote>
 <h1 id="连接samba"><a href="#连接samba" class="headerlink" title="连接samba"></a>连接samba</h1><ul>
 <li><p>win+r 输入ip</p>
 <blockquote>
@@ -1165,7 +1176,7 @@ sudo nano /etc/samba/smb.conf
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">58.6k</span> 字
+                <span class="white-color">59.8k</span> 字
             
 
             

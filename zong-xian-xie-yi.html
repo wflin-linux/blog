@@ -754,14 +754,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.8k
+                        2.3k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        6 分
+                        8 分
                     </div>
                     
                 
@@ -1015,11 +1015,59 @@ edac/            iscsi_flashnode/ nd/              platform/        serio/      
 <span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
 </ul>
-<h1 id="SPI"><a href="#SPI" class="headerlink" title="SPI"></a>SPI</h1><h1 id="串口（UART）"><a href="#串口（UART）" class="headerlink" title="串口（UART）"></a>串口（UART）</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><ul>
-<li><p>串口协议是一种在计算机和外部设备之间进行串行通信的规定或约定。它规定了数据在串口通信线路上传输的格式、速率、校验、流控制等参数，以确保发送方和接收方正确地解释和处理数据。</p>
+<h1 id="USB"><a href="#USB" class="headerlink" title="USB"></a>USB</h1><h2 id="usb-传输类型"><a href="#usb-传输类型" class="headerlink" title="usb 传输类型"></a>usb 传输类型</h2><ul>
+<li><p>usb定义了4种类传输类型</p>
+<ul>
+<li>批量传输</li>
+<li>同步传输（或等时传输）</li>
+<li>中断传输，这里指是一种异步通信方式而已，而不是物理中断，实际传输靠沦陷实现</li>
+<li>控制传输</li>
+</ul>
 </li>
-<li><p>常见的串口协议包括以下主要内容：</p>
-<ol>
+<li><p>所有的命令均由主机发起，从机处于被应答状态</p>
+</li>
+<li><p>usb 传输事物</p>
+<p><img src="/zong-xian-xie-yi/image-20230809220527140.png" alt="image-20230809220527140"></p>
+</li>
+</ul>
+<h2 id="usb设备描述符及其枚举过程"><a href="#usb设备描述符及其枚举过程" class="headerlink" title="usb设备描述符及其枚举过程"></a>usb设备描述符及其枚举过程</h2><ul>
+<li>描述符：描述了设备的各种行为和具体参数类型等，能够让主机明确应该加载什么样的驱动程序于设备之间进行怎么样的操作</li>
+<li>设备描述符：基本是与厂商有关的信息，比如厂商id（vid），产品id（pid），可能的配置数量</li>
+<li>配置描述符号：设备对主机提出的配置需求，记录可能的接口数量</li>
+<li>接口描述符：功能的体现，记录断点的数量。</li>
+<li>端点描述符：决定 usb 传输类型，也是通信的终点，类似是 Linux 系统的管道端口</li>
+<li>枚举过程<ul>
+<li>所谓枚举，其实就是一一列举的过程</li>
+<li>设备连接主机开始，直到给设备完成从机地址的整个分配过程</li>
+<li>只有成功被枚的设备才能进入正常的数据传输过程</li>
+<li>枚举之前与设备通信是通过 0 地址和 0 端点进行的</li>
+</ul>
+</li>
+</ul>
+<h2 id="Linux-usb驱动开发框架"><a href="#Linux-usb驱动开发框架" class="headerlink" title="Linux usb驱动开发框架"></a>Linux usb驱动开发框架</h2><ul>
+<li><p>主要有两类 usb 驱动开发</p>
+<ul>
+<li>usb 设备驱动程序（usb device drivers）：控制器端驱动，控制插入其中的 usb 设备</li>
+<li>usb 期间驱动程序（usb gadget drivers）：设备端驱动，控制该设备如何作为一个 usb 设备和主机通信</li>
+</ul>
+<p>设备和主机通信</p>
+</li>
+<li><p>Linux usb驱动框架</p>
+<p><img src="/zong-xian-xie-yi/image-20230809223618785.png" alt="image-20230809223618785"></p>
+</li>
+</ul>
+<h2 id="Linux-usb驱动开发流程"><a href="#Linux-usb驱动开发流程" class="headerlink" title="Linux usb驱动开发流程"></a>Linux usb驱动开发流程</h2><ul>
+<li>官方建议参考  usb-skeleton.c</li>
+<li>定义一个 usb_driver</li>
+<li>填充并初始化 usb_driver</li>
+<li>通过 usb_register() 完成注册</li>
+<li>通过 usb_unregister() 完成注销</li>
+<li>完成 usb_device_id 配置条件的选择</li>
+<li>usb 数据传输过程</li>
+</ul>
+<h1 id="串口（UART）"><a href="#串口（UART）" class="headerlink" title="串口（UART）"></a>串口（UART）</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><ul>
+<li>串口协议是一种在计算机和外部设备之间进行串行通信的规定或约定。它规定了数据在串口通信线路上传输的格式、速率、校验、流控制等参数，以确保发送方和接收方正确地解释和处理数据。</li>
+<li>常见的串口协议包括以下主要内容：<ol>
 <li><strong>数据位（Data Bits）</strong>： 数据位指定了每个数据字节中实际有效数据的位数。通常为5、6、7或8位。</li>
 <li><strong>停止位（Stop Bits）</strong>： 停止位表示每个数据字节之后传输的空闲位数。常用的有1位和2位停止位。</li>
 <li><strong>奇偶校验（Parity）</strong>： 奇偶校验用于检测传输过程中数据错误。校验位可以是奇校验（校验位被设置为确保数据位中的位数为奇数）或偶校验（校验位被设置为确保数据位中的位数为偶数）。</li>
@@ -1028,10 +1076,9 @@ edac/            iscsi_flashnode/ nd/              platform/        serio/      
 <li><strong>起始符和结束符</strong>： 有些串口通信协议在数据传输中会使用特定的起始符和结束符，以标识数据的开始和结束。</li>
 </ol>
 </li>
-<li><p>串口协议的定义对于正确地进行串口通信非常重要。发送方和接收方必须遵守相同的协议规定，以确保数据的正确传输和解析。不同设备和应用场景可能会使用不同的串口协议，因此在使用串口进行通信时，需要了解和配置相应的串口协议参数</p>
-</li>
+<li>串口协议的定义对于正确地进行串口通信非常重要。发送方和接收方必须遵守相同的协议规定，以确保数据的正确传输和解析。不同设备和应用场景可能会使用不同的串口协议，因此在使用串口进行通信时，需要了解和配置相应的串口协议参数</li>
 </ul>
-<h1 id=""><a href="#" class="headerlink" title=""></a></h1><h1 id="CAN"><a href="#CAN" class="headerlink" title="CAN"></a>CAN</h1><script>
+<h1 id="SPI"><a href="#SPI" class="headerlink" title="SPI"></a>SPI</h1><h1 id="CAN"><a href="#CAN" class="headerlink" title="CAN"></a>CAN</h1><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -1364,7 +1411,7 @@ edac/            iscsi_flashnode/ nd/              platform/        serio/      
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">58.6k</span> 字
+                <span class="white-color">59.8k</span> 字
             
 
             
