@@ -4,19 +4,6 @@
   
     
     <entry>
-      <title></title>
-      <link href="/wireshark.html"/>
-      <url>/wireshark.html</url>
-      
-        <content type="html"><![CDATA[<img src="/wireshark/image-20230811211811504.png" title="image-20230811211811504"><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
-      
-      
-      
-    </entry>
-    
-    
-    
-    <entry>
       <title>thttpd</title>
       <link href="/tinyhttpd.html"/>
       <url>/tinyhttpd.html</url>
@@ -90,6 +77,31 @@
             <tag> iot </tag>
             
             <tag> openwrt </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>wireshark</title>
+      <link href="/wireshark.html"/>
+      <url>/wireshark.html</url>
+      
+        <content type="html"><![CDATA[<img src="/wireshark/image-20230811211811504.png" title="image-20230811211811504"><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> wireshark </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> wireshark </tag>
             
         </tags>
       
