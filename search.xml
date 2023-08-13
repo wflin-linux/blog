@@ -17,6 +17,33 @@
     
     
     <entry>
+      <title>thttpd</title>
+      <link href="/tinyhttpd.html"/>
+      <url>/tinyhttpd.html</url>
+      
+        <content type="html"><![CDATA[<ul><li><p>下载源码</p><blockquote><p>git clone <a href="https://github.com/larryhe/tinyhttpd.git" target="_blank" rel="noopener">https://github.com/larryhe/tinyhttpd.git</a></p></blockquote></li><li><p>运行 configure 生成 makefile</p></li><li><p>make &amp;&amp; make install -i</p><ul><li>i 的原因是忽略一个错误【网上资料说是因为 makefile 中多了一个空格导致的，直接忽略就行】</li></ul></li><li><p>创建  /etc/thttpd.conf </p><pre class="line-numbers language-shell"><code class="language-shell">dir=/usr/local/www #根目录user=root #所属用户权限logfile=/var/log/thttpd.log #日志文件存放位置pidfile=/var/run/thttpd.pid #pid 存放位置port=8080 #端口cgipat=/cgi-bin/* #cgi 程序存放位置<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre></li><li><p>启动服务</p><blockquote><p>thttpd -C /etc/thttpd.conf</p></blockquote></li></ul><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> c </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> c </tag>
+            
+            <tag> thttpd </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>sqlite</title>
       <link href="/sqlite.html"/>
       <url>/sqlite.html</url>
