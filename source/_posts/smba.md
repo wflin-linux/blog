@@ -37,6 +37,39 @@ categories:
 
 
 
+重启程序
+
+> sudo /etc/init.d/smbd restart
+
+
+
+
+
+集合
+
+>sudo apt-get install samba
+>
+>
+>
+>sudo smbpasswd -a ubuntu
+>
+>
+>
+>[ubuntu]
+>	commen = ubuntu
+>	path = /home/ubuntu
+>	writable = yes
+>	valid user = ubuntu
+>	create mask = 0777
+>
+>
+>
+>sudo /etc/init.d/smbd restart
+
+
+
+
+
 # 连接samba
 
 * win+r 输入ip
