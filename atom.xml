@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wflin.ltd/"/>
-  <updated>2023-08-13T12:38:12.104Z</updated>
+  <updated>2023-08-17T15:51:26.660Z</updated>
   <id>https://wflin.ltd/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://wflin.ltd/tinyhttpd.html"/>
     <id>https://wflin.ltd/tinyhttpd.html</id>
     <published>2023-08-04T00:00:00.000Z</published>
-    <updated>2023-08-13T12:38:12.104Z</updated>
+    <updated>2023-08-17T15:51:26.660Z</updated>
     
     <summary type="html">
     
@@ -48,11 +48,45 @@
   </entry>
   
   <entry>
+    <title>BootLoader</title>
+    <link href="https://wflin.ltd/bootloader.html"/>
+    <id>https://wflin.ltd/bootloader.html</id>
+    <published>2023-08-03T00:00:00.000Z</published>
+    <updated>2023-08-17T15:51:26.604Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;script&gt;
+        document.querySelectorAll(&#39;.github-emoji&#39;)
+          .forEach(el =&gt; {
+            if (!el.dataset.src) { return; }
+       
+        
+      
+    
+    </summary>
+    
+      <category term="c" scheme="https://wflin.ltd/categories/c/"/>
+    
+    
+      <category term="c" scheme="https://wflin.ltd/tags/c/"/>
+    
+      <category term="bootloader" scheme="https://wflin.ltd/tags/bootloader/"/>
+    
+      <category term="linux" scheme="https://wflin.ltd/tags/linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>sqlite</title>
     <link href="https://wflin.ltd/sqlite.html"/>
     <id>https://wflin.ltd/sqlite.html</id>
     <published>2023-08-02T00:00:00.000Z</published>
-    <updated>2023-08-13T12:38:12.096Z</updated>
+    <updated>2023-08-17T15:51:26.644Z</updated>
     
     <summary type="html">
     
@@ -81,7 +115,7 @@
     <link href="https://wflin.ltd/openwrt.html"/>
     <id>https://wflin.ltd/openwrt.html</id>
     <published>2023-07-10T00:00:00.000Z</published>
-    <updated>2023-08-13T12:38:12.084Z</updated>
+    <updated>2023-08-17T15:51:26.632Z</updated>
     
     <summary type="html">
     
@@ -109,7 +143,7 @@
     <link href="https://wflin.ltd/wireshark.html"/>
     <id>https://wflin.ltd/wireshark.html</id>
     <published>2023-07-10T00:00:00.000Z</published>
-    <updated>2023-08-13T12:38:12.108Z</updated>
+    <updated>2023-08-17T15:51:26.660Z</updated>
     
     <summary type="html">
     
@@ -136,7 +170,7 @@
     <link href="https://wflin.ltd/raspberrypi.html"/>
     <id>https://wflin.ltd/raspberrypi.html</id>
     <published>2023-06-10T00:00:00.000Z</published>
-    <updated>2023-08-13T12:38:12.088Z</updated>
+    <updated>2023-08-17T15:51:26.636Z</updated>
     
     <summary type="html">
     
@@ -165,7 +199,7 @@
     <link href="https://wflin.ltd/smba.html"/>
     <id>https://wflin.ltd/smba.html</id>
     <published>2023-06-10T00:00:00.000Z</published>
-    <updated>2023-08-13T12:38:12.092Z</updated>
+    <updated>2023-08-17T15:51:26.644Z</updated>
     
     <summary type="html">
     
@@ -194,7 +228,7 @@
     <link href="https://wflin.ltd/zong-xian-xie-yi.html"/>
     <id>https://wflin.ltd/zong-xian-xie-yi.html</id>
     <published>2023-06-10T00:00:00.000Z</published>
-    <updated>2023-08-13T12:38:12.108Z</updated>
+    <updated>2023-08-17T15:51:26.660Z</updated>
     
     <summary type="html">
     
@@ -228,7 +262,7 @@
     <link href="https://wflin.ltd/vscode-bian-xie-linux-c.html"/>
     <id>https://wflin.ltd/vscode-bian-xie-linux-c.html</id>
     <published>2023-04-15T00:00:00.000Z</published>
-    <updated>2023-08-13T12:38:12.108Z</updated>
+    <updated>2023-08-17T15:51:26.660Z</updated>
     
     <summary type="html">
     
@@ -256,7 +290,7 @@
     <link href="https://wflin.ltd/springboot-tools.html"/>
     <id>https://wflin.ltd/springboot-tools.html</id>
     <published>2023-03-06T00:00:00.000Z</published>
-    <updated>2023-08-13T12:38:12.092Z</updated>
+    <updated>2023-08-17T15:51:26.644Z</updated>
     
     <summary type="html">
     
@@ -282,7 +316,7 @@
     <link href="https://wflin.ltd/code-tools.html"/>
     <id>https://wflin.ltd/code-tools.html</id>
     <published>2023-02-19T00:00:00.000Z</published>
-    <updated>2023-08-13T12:38:12.064Z</updated>
+    <updated>2023-08-17T15:51:26.608Z</updated>
     
     <summary type="html">
     
@@ -312,7 +346,7 @@
     <link href="https://wflin.ltd/js-han-shu.html"/>
     <id>https://wflin.ltd/js-han-shu.html</id>
     <published>2023-02-18T00:00:00.000Z</published>
-    <updated>2023-08-13T12:38:12.076Z</updated>
+    <updated>2023-08-17T15:51:26.624Z</updated>
     
     <summary type="html">
     
@@ -340,7 +374,7 @@
     <link href="https://wflin.ltd/vue-cli.html"/>
     <id>https://wflin.ltd/vue-cli.html</id>
     <published>2022-11-29T09:35:03.000Z</published>
-    <updated>2023-08-13T12:38:12.108Z</updated>
+    <updated>2023-08-17T15:51:26.660Z</updated>
     
     <summary type="html">
     
@@ -368,7 +402,7 @@
     <link href="https://wflin.ltd/minio.html"/>
     <id>https://wflin.ltd/minio.html</id>
     <published>2022-11-06T00:00:00.000Z</published>
-    <updated>2023-08-13T12:38:12.080Z</updated>
+    <updated>2023-08-17T15:51:26.628Z</updated>
     
     <summary type="html">
     
@@ -394,7 +428,7 @@
     <link href="https://wflin.ltd/mqtt.html"/>
     <id>https://wflin.ltd/mqtt.html</id>
     <published>2022-09-01T00:00:00.000Z</published>
-    <updated>2023-08-13T12:38:12.084Z</updated>
+    <updated>2023-08-17T15:51:26.632Z</updated>
     
     <summary type="html">
     
@@ -424,7 +458,7 @@
     <link href="https://wflin.ltd/restful.html"/>
     <id>https://wflin.ltd/restful.html</id>
     <published>2022-03-25T00:00:00.000Z</published>
-    <updated>2023-08-13T12:38:12.092Z</updated>
+    <updated>2023-08-17T15:51:26.644Z</updated>
     
     <summary type="html">
     
@@ -455,7 +489,7 @@
     <link href="https://wflin.ltd/rabbitmq.html"/>
     <id>https://wflin.ltd/rabbitmq.html</id>
     <published>2022-03-20T00:00:00.000Z</published>
-    <updated>2023-08-13T12:38:12.088Z</updated>
+    <updated>2023-08-17T15:51:26.636Z</updated>
     
     <summary type="html">
     
@@ -483,7 +517,7 @@
     <link href="https://wflin.ltd/latex.html"/>
     <id>https://wflin.ltd/latex.html</id>
     <published>2022-03-10T00:00:00.000Z</published>
-    <updated>2023-08-13T12:38:12.076Z</updated>
+    <updated>2023-08-17T15:51:26.624Z</updated>
     
     <summary type="html">
     
@@ -511,7 +545,7 @@
     <link href="https://wflin.ltd/redis.html"/>
     <id>https://wflin.ltd/redis.html</id>
     <published>2022-01-27T00:00:00.000Z</published>
-    <updated>2023-08-13T12:38:12.088Z</updated>
+    <updated>2023-08-17T15:51:26.636Z</updated>
     
     <summary type="html">
     
@@ -528,9 +562,9 @@
       <category term="noSQL" scheme="https://wflin.ltd/categories/noSQL/"/>
     
     
-      <category term="java" scheme="https://wflin.ltd/tags/java/"/>
-    
       <category term="linux" scheme="https://wflin.ltd/tags/linux/"/>
+    
+      <category term="java" scheme="https://wflin.ltd/tags/java/"/>
     
       <category term="redis" scheme="https://wflin.ltd/tags/redis/"/>
     
@@ -541,7 +575,7 @@
     <link href="https://wflin.ltd/c.html"/>
     <id>https://wflin.ltd/c.html</id>
     <published>2021-11-20T00:00:00.000Z</published>
-    <updated>2023-08-13T12:38:12.064Z</updated>
+    <updated>2023-08-17T15:51:26.604Z</updated>
     
     <summary type="html">
     
@@ -561,36 +595,6 @@
       <category term="aiot" scheme="https://wflin.ltd/tags/aiot/"/>
     
       <category term="c" scheme="https://wflin.ltd/tags/c/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>树莓派国内镜像源</title>
-    <link href="https://wflin.ltd/raspi-source.html"/>
-    <id>https://wflin.ltd/raspi-source.html</id>
-    <published>2021-11-20T00:00:00.000Z</published>
-    <updated>2023-08-13T12:38:12.088Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;树莓派国内镜像源地址&quot;&gt;&lt;a href=&quot;#树莓派国内镜像源地址&quot; class=&quot;headerlink&quot; title=&quot;树莓派国内镜像源地址&quot;&gt;&lt;/a&gt;树莓派国内镜像源地址&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;查看树莓版本命令：&lt;/p&gt;
-&lt;pre
-        
-      
-    
-    </summary>
-    
-      <category term="raspberrypi" scheme="https://wflin.ltd/categories/raspberrypi/"/>
-    
-    
-      <category term="linux" scheme="https://wflin.ltd/tags/linux/"/>
-    
-      <category term="raspberrypi" scheme="https://wflin.ltd/tags/raspberrypi/"/>
     
   </entry>
   
