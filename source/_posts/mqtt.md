@@ -67,6 +67,38 @@ categories:
 
 ### 搭建：
 
+#### 建立文件夹
+
+* mkdir -p ./mosquitto/config
+* mkdir -p ./mosquitto/data
+* mkdir -p ./mosquitto/log
+
+#### 目录设置权限
+
+* chmod -R 755 ./mosquitto
+* chmode -R 777 /mosquitto/log #日志目录要最大权限
+
+#### 编辑配置文件
+
+* vi /mosquitto/config/mosquitto.conf
+
+  ```shell
+  persistence true
+  persistence_location /mosquitto/data
+  log_dest file /mosquitto/log/mosquitto.log
+  
+  #监听端口默认是 9001，我的9001被占用所以我选择9002
+  listener 9002
+  ##通信端口
+  port 1883
+  ## 关闭匿名模式
+  allow_anonymous false
+  ## 指定密码文件
+  password_file /mosquitto/config/pwfile.conf
+  ```
+
+#### 运行镜像
+
 docker-compose.yaml
 
 ```shell
@@ -78,13 +110,35 @@ services:
         privileged: true 
         ports: 
             - 1883:1883
-            - 9001:9001
+            - 9002:9001
         volumes:
-            - ./config:/mosquitto/config
-            - ./data:/mosquitto/data
-            - ./log:/mosquitto/log
+            - ./mosquitto/config:/mosquitto/config
+            - ./mosquitto/data:/mosquitto/data
+            - ./mosquitto/log:/mosquitto/log
 
 ```
+
+#### 进入容器执行
+
+* 创建密码管理文件
+
+  touch /mosquitto/config/pwfile.conf
+
+  chmod -R 755 /mosquitto/config/pwfile.conf
+
+* 创建用户名和密码
+
+  ```shell
+  mosquitto_passwd -b /mosquitto/config/pwfile.conf admin admin
+  ```
+
+  `注意`：创建新用户之后都要重启容器重新加载配置文件，不然就会报没有认证
+
+
+
+
+
+
 
 ### 连接
 
