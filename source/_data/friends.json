@@ -40,13 +40,19 @@
         "title": "前去学习",
         "introduction": "前端大佬",
         "avatar": "https://mengl.me/images/avatar_mengluorj.jpg"
-        
-    },{
+    },
+    {
         "name": "嵌入式大佬",
         "url": "https://carl-5535.github.io",
         "title": "前去学习",
         "introduction": "嵌入式大佬",
         "avatar": "https://fastly.jsdelivr.net/gh/Carl-5535/images@master/head/carl.jpg"
-        
+    },
+    {
+        "name": "嵌入式大佬",
+        "url": "    https://zhou-yuxin.github.io/",
+        "title": "前去学习",
+        "introduction": "嵌入式大佬",
+        "avatar": ""
     }
 ]
