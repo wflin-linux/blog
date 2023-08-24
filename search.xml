@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>国内使用 chatgpt</title>
+      <link href="/chatgpt.html"/>
+      <url>/chatgpt.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="推荐一个国内可使用的chatgpt网址，帮朋友做一个推广"><a href="#推荐一个国内可使用的chatgpt网址，帮朋友做一个推广" class="headerlink" title="推荐一个国内可使用的chatgpt网址，帮朋友做一个推广"></a>推荐一个国内可使用的chatgpt网址，帮朋友做一个推广</h2><p><a href="https://weilaiai.top" target="_blank" rel="noopener">https://weilaiai.top</a></p><script>        document.querySelectorAll('.github-emoji')          .forEach(el => {            if (!el.dataset.src) { return; }            const img = document.createElement('img');            img.style = 'display:none !important;';            img.src = el.dataset.src;            img.addEventListener('error', () => {              img.remove();              el.style.color = 'inherit';              el.style.backgroundImage = 'none';              el.style.background = 'none';            });            img.addEventListener('load', () => {              img.remove();            });            document.body.appendChild(img);          });      </script>]]></content>
+      
+      
+      <categories>
+          
+          <category> chatgpt </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> chatgpt </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>thttpd</title>
       <link href="/tinyhttpd.html"/>
       <url>/tinyhttpd.html</url>
