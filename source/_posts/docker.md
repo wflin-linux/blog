@@ -85,7 +85,7 @@ sudo mkdir -p /etc/docker
 sudo tee /etc/docker/daemon.json <<-'EOF'
 {
   "registry-mirrors": ["https://efwckkji.mirror.aliyuncs.com"],
-  "iptables": false
+  "iptables": true
 }
 EOF
 sudo systemctl daemon-reload
@@ -97,7 +97,7 @@ sudo mkdir -p /etc/docker
 sudo tee /etc/docker/daemon.json <<-'EOF'
 {
   "registry-mirrors": ["https://efwckkji.mirror.aliyuncs.com"],
-  "iptables": false
+  "iptables": true
 }
 EOF
 sudo systemctl daemon-reload
