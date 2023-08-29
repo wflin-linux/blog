@@ -192,3 +192,155 @@ categories:
  +-----+-----+---------+------+---+---Pi 3B--+---+------+---------+-----+-----+
 ```
 
+# 交叉编译
+
+## 环境配置
+
+交叉编译工具链
+
+[https://github.com/raspberrypi/tools.git](https://github.com/raspberrypi/tools.git)
+
+树莓派 linux 源码
+
+[https://github.com/raspberrypi/linux.git](https://github.com/raspberrypi/linux.git)
+
+### 临时配置
+
+1. 打印系统环境变量
+
+   > echo $PATH
+
+2. 把 tools bin 追加到PATH
+
+   > export PATH=$PATH:(toolsPATH)
+
+3. shell 脚本
+
+   ```shell
+   #!/bin/bash
+   
+   # 获取脚本所在目录的绝对路径
+   SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
+   
+   # 设置临时变量
+   TEMP_VAR="$SCRIPT_DIR/tools/arm-bcm2708/arm-linux-gnueabihf/bin"
+   
+   # 将 TEMP_VAR 变量中的路径添加到 PATH 中
+   export PATH="$TEMP_VAR:$PATH"
+   
+   export ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- KERNEL=kernel7
+   
+   # 输出变量值
+   echo "New PATH: $PATH"
+   ```
+
+4. 使用
+
+   > source env.sh
+
+### 永久配置
+
+则是将上面的shell 放到 profile 文件中
+
+# 内核编译
+
+[树莓派-内核开发-说明 下载代码 编译 替换内核_nicekwell的博客-CSDN博客](https://blog.csdn.net/nicekwell/article/details/78482833))
+
+### 安装的软件
+
+```shell
+sudo apt-get install bc -y
+sudo apt-get install libncurses5-dev libncursesw5-dev -y
+sudo apt-get install zlib1g:i386 -y
+sudo apt-get install libc6-i386 lib32stdc++6 lib32gcc1 lib32ncurses5 -y
+```
+
+踩坑 
+
+* `Unable to locate package zlib1g:i386`
+
+解决
+
+* dpkg --add-architecture i386
+* apt-get update
+* sudo apt-get install zlib1g:i386 -y
+
+### 编译指令
+
+#### 执行 menuconfig
+
+```shell
+ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- KERNEL=kernel7 make menuconfig
+#指定arm架构  指定编译器                       树莓派            主要核心指令
+```
+
+#### 编译
+
+```shell
+ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- KERNEL=kernel7 make -j4 zImage modules dtbs 2>&1 | tee build.log
+以n进程编译。不指明几进程的话则默认以单进程编译。
+```
+
+* zImage：生成内核镜像
+* modules：生成驱动模块
+* dtbs：配置文件
+
+编译成功会生成 vmlinux 源码树目录，失败则无，编译成功后，目标 zimage 镜像 arch/arm/boot目录下，需要打包 zImage 成树莓派可用的 xxx.img
+
+#### 打包 zimage 镜像
+
+* 直接用linux源码包里的工具：
+
+  > ./scripts/mkknlimg arch/arm/boot/zImage ./kernel_new.img
+
+### 数据拷贝
+
+* mkdir  boot data
+
+#### 挂载sd卡
+
+* mount /dev/sdb1 boot       一个 fat 分区，是 boot 相关的内容，kernel 的 img
+* mount /dev/sdb2 data       一个是 ext4 分区，也就是系统的根目录分区
+
+#### 安装 moudles 
+
+* 设备驱动文件：hdmi，usb，wifi，io ......
+
+  > sudo ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- KERNEL=kernel7 make INSTALL_MOD_PATH=(根目录)[ext4] modules_install
+
+### 更新 kernel.img 文件
+
+备份原来的镜像
+
+> cp kernel7.img kernel7.old.img
+
+#### 方法一：
+
+将新镜像复制到boot
+
+>cp kernel_new.img boot/kernel.img
+
+#### 方法二：
+
+将新镜像复制到boot
+
+> cp kernel_new.img boot/kernel.img
+
+
+
+编辑 boot/config.txt 文件，在最后加入一行：
+
+> kernel=kernel_new.img 
+
+### 复制其他相关文件
+
+```shell
+cp arch/arm/boot/.*dts/.dtb [fat]/
+cp arch/arm/boot/dts/overlays/.*dtb* [fat]/overlays/
+cp arch/arm/boot/dts/overlays/README [fat]/overlays/
+```
+
+
+
+更新完成后插回树莓派即可开机，开机后可以用 uname -a 命令查看kernel信息已经改变
+
