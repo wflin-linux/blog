@@ -196,6 +196,10 @@ categories:
 
 ## 环境配置
 
+编译高版本的可以使用这个
+
+https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-a/downloads
+
 交叉编译工具链
 
 [https://github.com/raspberrypi/tools.git](https://github.com/raspberrypi/tools.git)
@@ -215,6 +219,17 @@ categories:
    > export PATH=$PATH:(toolsPATH)
 
 3. shell 脚本
+
+   ```shell
+   #!/bin/bash
+   DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+   export PATH="$PATH:$DIR/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin/"
+   export ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- KERNEL=kernel7
+   ```
+
+   
+
+   或者
 
    ```shell
    #!/bin/bash
@@ -246,6 +261,8 @@ categories:
 
 [树莓派-内核开发-说明 下载代码 编译 替换内核_nicekwell的博客-CSDN博客](https://blog.csdn.net/nicekwell/article/details/78482833))
 
+编译64位 [自己制作树莓派3B+ 64位系统（编译内核+rootfs制作）_自己复刻树莓派_请叫我雯子小姐的小爷的博客-CSDN博客](https://blog.csdn.net/m0_49475727/article/details/109247979)
+
 ### 安装的软件
 
 ```shell
@@ -253,6 +270,11 @@ sudo apt-get install bc -y
 sudo apt-get install libncurses5-dev libncursesw5-dev -y
 sudo apt-get install zlib1g:i386 -y
 sudo apt-get install libc6-i386 lib32stdc++6 lib32gcc1 lib32ncurses5 -y
+sudo apt install flex -y
+sudo apt install bison -y
+sudo apt-get install libelf-dev -y
+sudo apt-get install lib32z1 -y
+sudo apt-get install libgmp-dev -y
 ```
 
 踩坑 
@@ -261,11 +283,13 @@ sudo apt-get install libc6-i386 lib32stdc++6 lib32gcc1 lib32ncurses5 -y
 
 解决
 
-* dpkg --add-architecture i386
-* apt-get update
+* sudo dpkg --add-architecture i386
+* sudo apt-get update
 * sudo apt-get install zlib1g:i386 -y
 
 ### 编译指令
+
+* make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- bcm2709_defconfig
 
 #### 执行 menuconfig
 
@@ -277,7 +301,7 @@ ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- KERNEL=kernel7 make menuconfig
 #### 编译
 
 ```shell
-ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- KERNEL=kernel7 make -j4 zImage modules dtbs 2>&1 | tee build.log
+ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- KERNEL=kernel7 make -j2 zImage modules dtbs >&1 | tee build.log
 以n进程编译。不指明几进程的话则默认以单进程编译。
 ```
 
@@ -287,11 +311,42 @@ ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- KERNEL=kernel7 make -j4 zImage modul
 
 编译成功会生成 vmlinux 源码树目录，失败则无，编译成功后，目标 zimage 镜像 arch/arm/boot目录下，需要打包 zImage 成树莓派可用的 xxx.img
 
+##### 踩坑
+
+很明显编译不会那么顺利.......
+
+* 错误：
+
+```txt
+error: #error New address family defined, please update secclass_map.
+  246 | #error New address family defined, please update secclass_map.
+```
+
+* 解决办法：
+
+[[PATCH\] selinux: use kernel linux/socket.h definitions for PF_MAX - Paulo Alcantara](https://lore.kernel.org/selinux/20190225005528.28371-1-paulo@paulo.ac/)
+
+* 错误
+
+```txt
+No rule to make target 'debian/canonical-certs.pem', needed by 'certs/x509_certificate_list'.  Stop.
+```
+
+* 解决办法
+
+[内核错误: No rule to make target ‘debian/canonical-certs.pem‘, needed by ‘certs/x509_certificate_list‘_no rule to make target 'debian/canonical-certs.pem_Imagine Miracle的博客-CSDN博客](https://blog.csdn.net/qq_36393978/article/details/118157426)
+
+
+
 #### 打包 zimage 镜像
 
 * 直接用linux源码包里的工具：
 
   > ./scripts/mkknlimg arch/arm/boot/zImage ./kernel_new.img
+
+* 复制到内核
+
+  > sudo cp kernel_new.img /home/ubuntu/raspberrypi/boot/kernel7.img
 
 ### 数据拷贝
 
@@ -307,6 +362,10 @@ ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- KERNEL=kernel7 make -j4 zImage modul
 * 设备驱动文件：hdmi，usb，wifi，io ......
 
   > sudo ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- KERNEL=kernel7 make INSTALL_MOD_PATH=(根目录)[ext4] modules_install
+  
+* 我的指令
+
+  > sudo ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- KERNEL=kernel7 make INSTALL_MOD_PATH=/home/ubuntu/raspberrypi/data modules_install
 
 ### 更新 kernel.img 文件
 
@@ -335,10 +394,20 @@ ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- KERNEL=kernel7 make -j4 zImage modul
 ### 复制其他相关文件
 
 ```shell
-cp arch/arm/boot/.*dts/.dtb [fat]/
-cp arch/arm/boot/dts/overlays/.*dtb* [fat]/overlays/
+cp arch/arm/boot/dts/*.*dtb* [fat]/
+cp arch/arm/boot/dts/overlays/*.dtb* [fat]/overlays/
 cp arch/arm/boot/dts/overlays/README [fat]/overlays/
 ```
+
+我的指令
+
+```shell
+sudo cp arch/arm/boot/dts/*.dtb /home/ubuntu/raspberrypi/boot/
+sudo cp arch/arm/boot/dts/overlays/*.dtb* /home/ubuntu/raspberrypi/boot/overlays/
+sudo cp arch/arm/boot/dts/overlays/README /home/ubuntu/raspberrypi/boot/overlays/
+```
+
+
 
 
 
