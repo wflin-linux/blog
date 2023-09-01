@@ -740,14 +740,14 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        1.9k
+                        2.2k
                     </div>
                     
 
                     
                     <div class="info-break-policy">
                         <i class="fa fa-clock-o fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                        8 分
+                        10 分
                     </div>
                     
                 
@@ -911,7 +911,9 @@ ldconfig<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
  +-----+-----+---------+------+---+----++----+---+------+---------+-----+-----+
  | BCM | wPi |   Name  | Mode | V | Physical | V | Mode | Name    | wPi | BCM |
  +-----+-----+---------+------+---+---Pi 3B--+---+------+---------+-----+-----+<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
-<h1 id="交叉编译"><a href="#交叉编译" class="headerlink" title="交叉编译"></a>交叉编译</h1><h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p>交叉编译工具链</p>
+<h1 id="交叉编译"><a href="#交叉编译" class="headerlink" title="交叉编译"></a>交叉编译</h1><h2 id="环境配置"><a href="#环境配置" class="headerlink" title="环境配置"></a>环境配置</h2><p>编译高版本的可以使用这个</p>
+<p><a href="https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-a/downloads" target="_blank" rel="noopener">https://developer.arm.com/tools-and-software/open-source-software/developer-tools/gnu-toolchain/gnu-a/downloads</a></p>
+<p>交叉编译工具链</p>
 <p><a href="https://github.com/raspberrypi/tools.git" target="_blank" rel="noopener">https://github.com/raspberrypi/tools.git</a></p>
 <p>树莓派 linux 源码</p>
 <p><a href="https://github.com/raspberrypi/linux.git" target="_blank" rel="noopener">https://github.com/raspberrypi/linux.git</a></p>
@@ -928,21 +930,28 @@ ldconfig<span aria-hidden="true" class="line-numbers-rows"><span></span><span></
 </li>
 <li><p>shell 脚本</p>
 <pre class="line-numbers language-shell"><code class="language-shell">#!/bin/bash
-
-# 获取脚本所在目录的绝对路径
-SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
-
-# 设置临时变量
-TEMP_VAR="$SCRIPT_DIR/tools/arm-bcm2708/arm-linux-gnueabihf/bin"
-
-# 将 TEMP_VAR 变量中的路径添加到 PATH 中
-export PATH="$TEMP_VAR:$PATH"
-
-export ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- KERNEL=kernel7
-
-# 输出变量值
-echo "New PATH: $PATH"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+export PATH="$PATH:$DIR/arm-bcm2708/gcc-linaro-arm-linux-gnueabihf-raspbian-x64/bin/"
+export ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- KERNEL=kernel7<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
 </li>
+</ol>
+<p>   或者</p>
+<pre class="line-numbers language-shell"><code class="language-shell">   #!/bin/bash
+
+   # 获取脚本所在目录的绝对路径
+   SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
+
+   # 设置临时变量
+   TEMP_VAR="$SCRIPT_DIR/tools/arm-bcm2708/arm-linux-gnueabihf/bin"
+
+   # 将 TEMP_VAR 变量中的路径添加到 PATH 中
+   export PATH="$TEMP_VAR:$PATH"
+
+   export ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- KERNEL=kernel7
+
+   # 输出变量值
+   echo "New PATH: $PATH"<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<ol start="4">
 <li><p>使用</p>
 <blockquote>
 <p>source env.sh</p>
@@ -951,23 +960,32 @@ echo "New PATH: $PATH"<span aria-hidden="true" class="line-numbers-rows"><span><
 </ol>
 <h3 id="永久配置"><a href="#永久配置" class="headerlink" title="永久配置"></a>永久配置</h3><p>则是将上面的shell 放到 profile 文件中</p>
 <h1 id="内核编译"><a href="#内核编译" class="headerlink" title="内核编译"></a>内核编译</h1><p><a href="https://blog.csdn.net/nicekwell/article/details/78482833" target="_blank" rel="noopener">树莓派-内核开发-说明 下载代码 编译 替换内核_nicekwell的博客-CSDN博客</a>)</p>
+<p>编译64位 <a href="https://blog.csdn.net/m0_49475727/article/details/109247979" target="_blank" rel="noopener">自己制作树莓派3B+ 64位系统（编译内核+rootfs制作）_自己复刻树莓派_请叫我雯子小姐的小爷的博客-CSDN博客</a></p>
 <h3 id="安装的软件"><a href="#安装的软件" class="headerlink" title="安装的软件"></a>安装的软件</h3><pre class="line-numbers language-shell"><code class="language-shell">sudo apt-get install bc -y
 sudo apt-get install libncurses5-dev libncursesw5-dev -y
 sudo apt-get install zlib1g:i386 -y
-sudo apt-get install libc6-i386 lib32stdc++6 lib32gcc1 lib32ncurses5 -y<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+sudo apt-get install libc6-i386 lib32stdc++6 lib32gcc1 lib32ncurses5 -y
+sudo apt install flex -y
+sudo apt install bison -y
+sudo apt-get install libelf-dev -y
+sudo apt-get install lib32z1 -y
+sudo apt-get install libgmp-dev -y<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 <p>踩坑 </p>
 <ul>
 <li><code>Unable to locate package zlib1g:i386</code></li>
 </ul>
 <p>解决</p>
 <ul>
-<li>dpkg –add-architecture i386</li>
-<li>apt-get update</li>
+<li>sudo dpkg –add-architecture i386</li>
+<li>sudo apt-get update</li>
 <li>sudo apt-get install zlib1g:i386 -y</li>
 </ul>
-<h3 id="编译指令"><a href="#编译指令" class="headerlink" title="编译指令"></a>编译指令</h3><h4 id="执行-menuconfig"><a href="#执行-menuconfig" class="headerlink" title="执行 menuconfig"></a>执行 menuconfig</h4><pre class="line-numbers language-shell"><code class="language-shell">ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- KERNEL=kernel7 make menuconfig
+<h3 id="编译指令"><a href="#编译指令" class="headerlink" title="编译指令"></a>编译指令</h3><ul>
+<li>make ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- bcm2709_defconfig</li>
+</ul>
+<h4 id="执行-menuconfig"><a href="#执行-menuconfig" class="headerlink" title="执行 menuconfig"></a>执行 menuconfig</h4><pre class="line-numbers language-shell"><code class="language-shell">ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- KERNEL=kernel7 make menuconfig
 #指定arm架构  指定编译器                       树莓派            主要核心指令<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
-<h4 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h4><pre class="line-numbers language-shell"><code class="language-shell">ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- KERNEL=kernel7 make -j4 zImage modules dtbs 2>&1 | tee build.log
+<h4 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h4><pre class="line-numbers language-shell"><code class="language-shell">ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- KERNEL=kernel7 make -j2 zImage modules dtbs >&1 | tee build.log
 以n进程编译。不指明几进程的话则默认以单进程编译。<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
 <ul>
 <li>zImage：生成内核镜像</li>
@@ -975,10 +993,33 @@ sudo apt-get install libc6-i386 lib32stdc++6 lib32gcc1 lib32ncurses5 -y<span ari
 <li>dtbs：配置文件</li>
 </ul>
 <p>编译成功会生成 vmlinux 源码树目录，失败则无，编译成功后，目标 zimage 镜像 arch/arm/boot目录下，需要打包 zImage 成树莓派可用的 xxx.img</p>
+<h5 id="踩坑"><a href="#踩坑" class="headerlink" title="踩坑"></a>踩坑</h5><p>很明显编译不会那么顺利…….</p>
+<ul>
+<li>错误：</li>
+</ul>
+<pre class="line-numbers language-txt"><code class="language-txt">error: #error New address family defined, please update secclass_map.
+  246 | #error New address family defined, please update secclass_map.<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+<ul>
+<li>解决办法：</li>
+</ul>
+<p><a href="https://lore.kernel.org/selinux/20190225005528.28371-1-paulo@paulo.ac/" target="_blank" rel="noopener">[PATCH] selinux: use kernel linux/socket.h definitions for PF_MAX - Paulo Alcantara</a></p>
+<ul>
+<li>错误</li>
+</ul>
+<pre class="line-numbers language-txt"><code class="language-txt">No rule to make target 'debian/canonical-certs.pem', needed by 'certs/x509_certificate_list'.  Stop.<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+<ul>
+<li>解决办法</li>
+</ul>
+<p><a href="https://blog.csdn.net/qq_36393978/article/details/118157426" target="_blank" rel="noopener">内核错误: No rule to make target ‘debian/canonical-certs.pem‘, needed by ‘certs/x509_certificate_list‘_no rule to make target ‘debian/canonical-certs.pem_Imagine Miracle的博客-CSDN博客</a></p>
 <h4 id="打包-zimage-镜像"><a href="#打包-zimage-镜像" class="headerlink" title="打包 zimage 镜像"></a>打包 zimage 镜像</h4><ul>
 <li><p>直接用linux源码包里的工具：</p>
 <blockquote>
 <p>./scripts/mkknlimg arch/arm/boot/zImage ./kernel_new.img</p>
+</blockquote>
+</li>
+<li><p>复制到内核</p>
+<blockquote>
+<p>sudo cp kernel_new.img /home/ubuntu/raspberrypi/boot/kernel7.img</p>
 </blockquote>
 </li>
 </ul>
@@ -993,6 +1034,11 @@ sudo apt-get install libc6-i386 lib32stdc++6 lib32gcc1 lib32ncurses5 -y<span ari
 <li><p>设备驱动文件：hdmi，usb，wifi，io ……</p>
 <blockquote>
 <p>sudo ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- KERNEL=kernel7 make INSTALL_MOD_PATH=(根目录)[ext4] modules_install</p>
+</blockquote>
+</li>
+<li><p>我的指令</p>
+<blockquote>
+<p>sudo ARCH=arm CROSS_COMPILE=arm-linux-gnueabihf- KERNEL=kernel7 make INSTALL_MOD_PATH=/home/ubuntu/raspberrypi/data modules_install</p>
 </blockquote>
 </li>
 </ul>
@@ -1012,9 +1058,13 @@ sudo apt-get install libc6-i386 lib32stdc++6 lib32gcc1 lib32ncurses5 -y<span ari
 <blockquote>
 <p>kernel=kernel_new.img </p>
 </blockquote>
-<h3 id="复制其他相关文件"><a href="#复制其他相关文件" class="headerlink" title="复制其他相关文件"></a>复制其他相关文件</h3><pre class="line-numbers language-shell"><code class="language-shell">cp arch/arm/boot/.*dts/.dtb [fat]/
-cp arch/arm/boot/dts/overlays/.*dtb* [fat]/overlays/
+<h3 id="复制其他相关文件"><a href="#复制其他相关文件" class="headerlink" title="复制其他相关文件"></a>复制其他相关文件</h3><pre class="line-numbers language-shell"><code class="language-shell">cp arch/arm/boot/dts/*.*dtb* [fat]/
+cp arch/arm/boot/dts/overlays/*.dtb* [fat]/overlays/
 cp arch/arm/boot/dts/overlays/README [fat]/overlays/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
+<p>我的指令</p>
+<pre class="line-numbers language-shell"><code class="language-shell">sudo cp arch/arm/boot/dts/*.dtb /home/ubuntu/raspberrypi/boot/
+sudo cp arch/arm/boot/dts/overlays/*.dtb* /home/ubuntu/raspberrypi/boot/overlays/
+sudo cp arch/arm/boot/dts/overlays/README /home/ubuntu/raspberrypi/boot/overlays/<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span></span></code></pre>
 <p>更新完成后插回树莓派即可开机，开机后可以用 uname -a 命令查看kernel信息已经改变</p>
 <script>
         document.querySelectorAll('.github-emoji')
@@ -1349,7 +1399,7 @@ cp arch/arm/boot/dts/overlays/README [fat]/overlays/<span aria-hidden="true" cla
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">60.9k</span> 字
+                <span class="white-color">61.3k</span> 字
             
 
             
