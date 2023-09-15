@@ -383,7 +383,7 @@ No rule to make target 'debian/canonical-certs.pem', needed by 'certs/x509_certi
 
 将新镜像复制到boot
 
-> cp kernel_new.img boot/kernel.img
+> cp kernel_new.img boot/kernel8.img
 
 
 

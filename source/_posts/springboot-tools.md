@@ -376,9 +376,9 @@ mybatis-plus:
 spring:
   #数据源
   datasource:
-  	driver-class-name: com.mysql.jdbc.Driver
-  	type: com.alibaba.druid.pool.DruidDataSource
-    url: jdbc:mysql://ip:port/database?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&characterEncoding=UTF-8&useSSL=false
+  driver-class-name: com.mysql.jdbc.Driver
+  type: com.alibaba.druid.pool.DruidDataSource
+  url: jdbc:mysql://ip:port/database?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&characterEncoding=UTF-8&useSSL=false
     username: root
     password: nba1234567
 

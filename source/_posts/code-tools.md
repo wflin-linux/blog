@@ -28,7 +28,7 @@ categories:
         <!--jar 管理-->
         <boot.version>2.2.2.RELEASE</boot.version>
         <mysql.vsersion>5.1.49</mysql.vsersion>
-		<!--j<mysql.version>8.0.25</mysql.version>-->
+		<!--<mysql.version>8.0.25</mysql.version>-->
         <druid.version>1.2.3</druid.version>
         <lombok.version>1.18.24</lombok.version>
         <log4j.version>1.2.17</log4j.version>
@@ -118,22 +118,20 @@ categories:
 
 ```java
 @Configuration
-public class corsConfig implements WebMvcConfigurer {
+public class CorsConfig implements WebMvcConfigurer {
 
     static final String ORIGINS[] =new String[] {"GET","POST","HEAD","PUT","DELETE","OPTIONS"};
 
     @Override
-    public void addCorsMappings(CorsRegistry registry){
-
+    public void addCorsMappings(CorsRegistry registry) {
         WebMvcConfigurer.super.addCorsMappings(registry);
         registry.addMapping("/**")
-                .allowedOriginPatterns("*")
-                .allowedMethods(ORIGINS)
-                .allowCredentials(true)
-                .maxAge(3600)
-                .allowedHeaders("*");
+            .allowedOrigins("*")
+            .allowedMethods("GET","POST","HEAD","PUT","DELETE","OPTIONS")
+            .allowCredentials(true)
+            .maxAge(3600)
+            .allowedHeaders("*");
     }
-}
 ```
 
 
