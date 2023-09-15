@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wflin.ltd/"/>
-  <updated>2023-09-01T15:55:31.127Z</updated>
+  <updated>2023-09-15T04:03:07.405Z</updated>
   <id>https://wflin.ltd/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://wflin.ltd/qt.html"/>
     <id>https://wflin.ltd/qt.html</id>
     <published>2023-08-25T00:00:00.000Z</published>
-    <updated>2023-09-01T15:55:31.127Z</updated>
+    <updated>2023-09-15T04:03:07.405Z</updated>
     
     <summary type="html">
     
@@ -29,11 +29,12 @@
       
         
         
-          &lt;script&gt;
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { return; }
-       
+          &lt;h1 id=&quot;信号和槽&quot;&gt;&lt;a href=&quot;#信号和槽&quot; class=&quot;headerlink&quot; title=&quot;信号和槽&quot;&gt;&lt;/a&gt;信号和槽&lt;/h1&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;信号：信号指控件发出的特定信号。&lt;/p&gt;
+&lt;p&gt;比如按钮信号&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;img
         
       
     
@@ -53,7 +54,7 @@
     <link href="https://wflin.ltd/chatgpt.html"/>
     <id>https://wflin.ltd/chatgpt.html</id>
     <published>2023-08-24T00:00:00.000Z</published>
-    <updated>2023-09-01T15:55:31.099Z</updated>
+    <updated>2023-09-15T04:03:07.373Z</updated>
     
     <summary type="html">
     
@@ -75,11 +76,44 @@
   </entry>
   
   <entry>
+    <title>tcp/udp套接字</title>
+    <link href="https://wflin.ltd/tcp-udp.html"/>
+    <id>https://wflin.ltd/tcp-udp.html</id>
+    <published>2023-08-15T00:00:00.000Z</published>
+    <updated>2023-09-15T04:03:07.437Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h1 id=&quot;字节序&quot;&gt;&lt;a href=&quot;#字节序&quot; class=&quot;headerlink&quot; title=&quot;字节序&quot;&gt;&lt;/a&gt;字节序&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;大端小端都叫主机字节序&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;小端&quot;&gt;&lt;a href=&quot;#小端&quot;
+        
+      
+    
+    </summary>
+    
+      <category term="c" scheme="https://wflin.ltd/categories/c/"/>
+    
+    
+      <category term="c" scheme="https://wflin.ltd/tags/c/"/>
+    
+      <category term="linux" scheme="https://wflin.ltd/tags/linux/"/>
+    
+      <category term="tcp/udp" scheme="https://wflin.ltd/tags/tcp-udp/"/>
+    
+  </entry>
+  
+  <entry>
     <title>thttpd</title>
     <link href="https://wflin.ltd/tinyhttpd.html"/>
     <id>https://wflin.ltd/tinyhttpd.html</id>
     <published>2023-08-04T00:00:00.000Z</published>
-    <updated>2023-09-01T15:55:31.151Z</updated>
+    <updated>2023-09-15T04:03:07.437Z</updated>
     
     <summary type="html">
     
@@ -110,7 +144,7 @@
     <link href="https://wflin.ltd/bootloader.html"/>
     <id>https://wflin.ltd/bootloader.html</id>
     <published>2023-08-03T00:00:00.000Z</published>
-    <updated>2023-09-01T15:55:31.095Z</updated>
+    <updated>2023-09-15T04:03:07.373Z</updated>
     
     <summary type="html">
     
@@ -144,7 +178,7 @@
     <link href="https://wflin.ltd/sqlite.html"/>
     <id>https://wflin.ltd/sqlite.html</id>
     <published>2023-08-02T00:00:00.000Z</published>
-    <updated>2023-09-01T15:55:31.135Z</updated>
+    <updated>2023-09-15T04:03:07.421Z</updated>
     
     <summary type="html">
     
@@ -173,7 +207,7 @@
     <link href="https://wflin.ltd/openwrt.html"/>
     <id>https://wflin.ltd/openwrt.html</id>
     <published>2023-07-10T00:00:00.000Z</published>
-    <updated>2023-09-01T15:55:31.123Z</updated>
+    <updated>2023-09-15T04:03:07.405Z</updated>
     
     <summary type="html">
     
@@ -201,7 +235,7 @@
     <link href="https://wflin.ltd/wireshark.html"/>
     <id>https://wflin.ltd/wireshark.html</id>
     <published>2023-07-10T00:00:00.000Z</published>
-    <updated>2023-09-01T15:55:31.151Z</updated>
+    <updated>2023-09-15T04:03:07.437Z</updated>
     
     <summary type="html">
     
@@ -228,7 +262,7 @@
     <link href="https://wflin.ltd/raspberrypi.html"/>
     <id>https://wflin.ltd/raspberrypi.html</id>
     <published>2023-06-10T00:00:00.000Z</published>
-    <updated>2023-09-01T15:55:31.127Z</updated>
+    <updated>2023-09-15T04:03:07.413Z</updated>
     
     <summary type="html">
     
@@ -257,7 +291,7 @@
     <link href="https://wflin.ltd/smba.html"/>
     <id>https://wflin.ltd/smba.html</id>
     <published>2023-06-10T00:00:00.000Z</published>
-    <updated>2023-09-01T15:55:31.135Z</updated>
+    <updated>2023-09-15T04:03:07.421Z</updated>
     
     <summary type="html">
     
@@ -286,7 +320,7 @@
     <link href="https://wflin.ltd/zong-xian-xie-yi.html"/>
     <id>https://wflin.ltd/zong-xian-xie-yi.html</id>
     <published>2023-06-10T00:00:00.000Z</published>
-    <updated>2023-09-01T15:55:31.151Z</updated>
+    <updated>2023-09-15T04:03:07.437Z</updated>
     
     <summary type="html">
     
@@ -320,7 +354,7 @@
     <link href="https://wflin.ltd/vscode-bian-xie-linux-c.html"/>
     <id>https://wflin.ltd/vscode-bian-xie-linux-c.html</id>
     <published>2023-04-15T00:00:00.000Z</published>
-    <updated>2023-09-01T15:55:31.151Z</updated>
+    <updated>2023-09-15T04:03:07.437Z</updated>
     
     <summary type="html">
     
@@ -348,7 +382,7 @@
     <link href="https://wflin.ltd/springboot-tools.html"/>
     <id>https://wflin.ltd/springboot-tools.html</id>
     <published>2023-03-06T00:00:00.000Z</published>
-    <updated>2023-09-01T15:55:31.135Z</updated>
+    <updated>2023-09-15T04:03:07.421Z</updated>
     
     <summary type="html">
     
@@ -374,7 +408,7 @@
     <link href="https://wflin.ltd/code-tools.html"/>
     <id>https://wflin.ltd/code-tools.html</id>
     <published>2023-02-19T00:00:00.000Z</published>
-    <updated>2023-09-01T15:55:31.099Z</updated>
+    <updated>2023-09-15T04:03:07.373Z</updated>
     
     <summary type="html">
     
@@ -404,7 +438,7 @@
     <link href="https://wflin.ltd/js-han-shu.html"/>
     <id>https://wflin.ltd/js-han-shu.html</id>
     <published>2023-02-18T00:00:00.000Z</published>
-    <updated>2023-09-01T15:55:31.115Z</updated>
+    <updated>2023-09-15T04:03:07.389Z</updated>
     
     <summary type="html">
     
@@ -432,7 +466,7 @@
     <link href="https://wflin.ltd/vue-cli.html"/>
     <id>https://wflin.ltd/vue-cli.html</id>
     <published>2022-11-29T09:35:03.000Z</published>
-    <updated>2023-09-01T15:55:31.151Z</updated>
+    <updated>2023-09-15T04:03:07.437Z</updated>
     
     <summary type="html">
     
@@ -460,7 +494,7 @@
     <link href="https://wflin.ltd/minio.html"/>
     <id>https://wflin.ltd/minio.html</id>
     <published>2022-11-06T00:00:00.000Z</published>
-    <updated>2023-09-01T15:55:31.115Z</updated>
+    <updated>2023-09-15T04:03:07.393Z</updated>
     
     <summary type="html">
     
@@ -486,7 +520,7 @@
     <link href="https://wflin.ltd/mqtt.html"/>
     <id>https://wflin.ltd/mqtt.html</id>
     <published>2022-09-01T00:00:00.000Z</published>
-    <updated>2023-09-01T15:55:31.123Z</updated>
+    <updated>2023-09-15T04:03:07.401Z</updated>
     
     <summary type="html">
     
@@ -516,7 +550,7 @@
     <link href="https://wflin.ltd/restful.html"/>
     <id>https://wflin.ltd/restful.html</id>
     <published>2022-03-25T00:00:00.000Z</published>
-    <updated>2023-09-01T15:55:31.135Z</updated>
+    <updated>2023-09-15T04:03:07.421Z</updated>
     
     <summary type="html">
     
@@ -547,7 +581,7 @@
     <link href="https://wflin.ltd/rabbitmq.html"/>
     <id>https://wflin.ltd/rabbitmq.html</id>
     <published>2022-03-20T00:00:00.000Z</published>
-    <updated>2023-09-01T15:55:31.127Z</updated>
+    <updated>2023-09-15T04:03:07.413Z</updated>
     
     <summary type="html">
     
@@ -567,34 +601,6 @@
       <category term="java" scheme="https://wflin.ltd/tags/java/"/>
     
       <category term="MQ" scheme="https://wflin.ltd/tags/MQ/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Latex</title>
-    <link href="https://wflin.ltd/latex.html"/>
-    <id>https://wflin.ltd/latex.html</id>
-    <published>2022-03-10T00:00:00.000Z</published>
-    <updated>2023-09-01T15:55:31.115Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h1 id=&quot;laTex-一些简单常用语法&quot;&gt;&lt;a href=&quot;#laTex-一些简单常用语法&quot; class=&quot;headerlink&quot; title=&quot;laTex 一些简单常用语法&quot;&gt;&lt;/a&gt;laTex 一些简单常用语法&lt;/h1&gt;&lt;p&gt;&lt;a
-        
-      
-    
-    </summary>
-    
-      <category term="latex" scheme="https://wflin.ltd/categories/latex/"/>
-    
-    
-      <category term="Markdown" scheme="https://wflin.ltd/tags/Markdown/"/>
-    
-      <category term="Math" scheme="https://wflin.ltd/tags/Math/"/>
     
   </entry>
   

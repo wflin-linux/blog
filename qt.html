@@ -9,10 +9,23 @@
     <meta name="keywords" content="qt, wflin 的博客">
     <meta name="baidu-site-verification" content="fmlEuI34ir">
     <meta name="google-site-verification" content="KeoTn_OFy4ndJwXNmm2gMeQfPhd7alqE9vQDwI32KCY">
-    <meta name="description" content="
-        document.querySelectorAll(&#39;.github-emoji&#39;)
-          .forEach(el =&gt; {
-            if (!el.dataset.src) { return">
+    <meta name="description" content="信号和槽
+信号：信号指控件发出的特定信号。
+比如按钮信号
+
+
+
+
+
+
+
+槽：就是槽函数的意思，我们可以把槽函数绑定在某一个控件信号上
+
+关联信号和槽自动关联
+手动选择控件，然后右键 -&amp;gt; 转到槽
+
+自动关联会给我们的工程添加以下内容
+">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -648,7 +661,7 @@
                     
                     <div class="info-break-policy">
                         <i class="fa fa-file-word-o fa-fw"></i>文章字数:&nbsp;&nbsp;
-                        52
+                        314
                     </div>
                     
 
@@ -672,7 +685,73 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <script>
+                <h1 id="信号和槽"><a href="#信号和槽" class="headerlink" title="信号和槽"></a>信号和槽</h1><ol>
+<li><p>信号：信号指控件发出的特定信号。</p>
+<p>比如按钮信号</p>
+</li>
+</ol>
+<img src="/qt/image-20230903164907782.png" title="image-20230903164907782">
+
+
+
+<ul>
+<li>槽：就是槽函数的意思，我们可以把槽函数绑定在某一个控件信号上</li>
+</ul>
+<h1 id="关联信号和槽"><a href="#关联信号和槽" class="headerlink" title="关联信号和槽"></a>关联信号和槽</h1><h2 id="自动关联"><a href="#自动关联" class="headerlink" title="自动关联"></a>自动关联</h2><ul>
+<li><p>手动选择控件，然后右键 -&gt; 转到槽</p>
+</li>
+<li><p>自动关联会给我们的工程添加以下内容</p>
+<img src="/qt/image-20230903165542104.png" title="image-20230903165542104">
+</li>
+<li><p>槽函数只能声明到 <strong>private slot</strong> 或者 <strong>public slot</strong></p>
+<img src="/qt/image-20230903165817793.png" title="image-20230903165817793">
+
+</li>
+</ul>
+<h2 id="手动关联"><a href="#手动关联" class="headerlink" title="手动关联"></a>手动关联</h2><ul>
+<li><p>使用 connect 函数</p>
+<pre class="line-numbers language-c++"><code class="language-c++">connect(ui-> reBtn,SIGNAL(clicked()),this,SLOT(on_reBtn_clicked()));
+
+connect(A,SIGNAL(B),C,SLOT(D));
+#当对象 A 发出 B 信号的时候，就会触发对象 c 的槽函数 D<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span></span></code></pre>
+<img src="/qt/image-20230903171021719.png" title="image-20230903171021719">
+
+<p>​    <img src="/qt/image-20230903171108708.png" title="image-20230903171108708"></p>
+</li>
+</ul>
+<h1 id="控件"><a href="#控件" class="headerlink" title="控件"></a>控件</h1><h2 id="添加图片"><a href="#添加图片" class="headerlink" title="添加图片"></a>添加图片</h2><ol>
+<li><p>添加 qt 资源文件</p>
+<img src="/qt/image-20230903171248242.png" title="image-20230903171248242">
+</li>
+<li><p>添加资源文件 open with-&gt; 资源编辑器</p>
+<img src="/qt/image-20230903171915787.png" title="image-20230903171915787">
+</li>
+<li><p>添加前置路径</p>
+<img src="/qt/image-20230903172017953.png" title="image-20230903172017953">
+</li>
+<li><p>点击添加文件选项，将要要的图片添加进去</p>
+<img src="/qt/image-20230903172125200.png" title="image-20230903172125200">
+</li>
+<li><p>添加 qlabel 控件，更改样式表</p>
+<img src="/qt/image-20230903172252879.png" title="image-20230903172252879">
+</li>
+<li><p>添加资源 img（border-images）</p>
+<img src="/qt/image-20230903172503880.png" title="image-20230903172503880">
+</li>
+<li><p>效果</p>
+<ul>
+<li>border-images</li>
+</ul>
+<img src="/qt/image-20230903172626974.png" title="image-20230903172626974">
+</li>
+</ol>
+<ul>
+<li><p>background-images</p>
+<img src="/qt/image-20230903172748573.png" title="image-20230903172748573">
+
+</li>
+</ul>
+<h1 id="布局"><a href="#布局" class="headerlink" title="布局"></a>布局</h1><h2 id="水平布局"><a href="#水平布局" class="headerlink" title="水平布局"></a>水平布局</h2><h2 id="垂直布局"><a href="#垂直布局" class="headerlink" title="垂直布局"></a>垂直布局</h2><h2 id="栅格化布局"><a href="#栅格化布局" class="headerlink" title="栅格化布局"></a>栅格化布局</h2><h1 id="界面切换"><a href="#界面切换" class="headerlink" title="界面切换"></a>界面切换</h1><h1 id="qt下的串口编程"><a href="#qt下的串口编程" class="headerlink" title="qt下的串口编程"></a>qt下的串口编程</h1><h1 id="qt网络编程"><a href="#qt网络编程" class="headerlink" title="qt网络编程"></a>qt网络编程</h1><h1 id="qt下操作GPIO"><a href="#qt下操作GPIO" class="headerlink" title="qt下操作GPIO"></a>qt下操作GPIO</h1><script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
             if (!el.dataset.src) { return; }
@@ -914,7 +993,7 @@
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">61.3k</span> 字
+                <span class="white-color">63.9k</span> 字
             
 
             
