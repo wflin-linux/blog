@@ -4,7 +4,7 @@ author: wflin
 date: 2023-06-10
 top: true
 cover: false
-toc: true
+toc: false
 mathjax: false
 summary: 树莓派开发相关
 tags:
