@@ -687,6 +687,11 @@
 </blockquote>
 </li>
 <li><p>覆盖 cmdline.txt，万一失效，所以建议先把这个文件备份一份</p>
+<p><strong>原来的</strong></p>
+<blockquote>
+<p>console=serial0,115200 console=tty1 root=PARTUUID=738a4d67-02 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait quiet init=/usr/lib/raspi-config/init_resize.sh</p>
+</blockquote>
+<p><strong>修改后</strong></p>
 <blockquote>
 <p>dwc_otg.lpm_enable=0 console=tty1 console=serial0,115200 root=/dev/mmcblk0p2 rootfstype=ext4 elevator=deadline fsck.repair=yes rootwait</p>
 </blockquote>
@@ -1217,7 +1222,7 @@ sudo cp arch/arm/boot/dts/overlays/README /home/ubuntu/raspberrypi/boot/overlays
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">63.9k</span> 字
+                <span class="white-color">64.2k</span> 字
             
 
             
