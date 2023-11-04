@@ -76,7 +76,7 @@ categories:
 #### 目录设置权限
 
 * chmod -R 755 ./mosquitto
-* chmode -R 777 /mosquitto/log #日志目录要最大权限
+* chmod -R 777 /mosquitto/log #日志目录要最大权限
 
 #### 编辑配置文件
 
