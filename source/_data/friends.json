@@ -68,5 +68,12 @@
         "title": "前去学习",
         "introduction": "嵌入式大佬",
         "avatar": "https://ask.qcloudimg.com/http-save/yehe-3499826/34rhqcorj2.jpeg"
+    },
+    {
+        "name": "subingwen",
+        "url": " https://subingwen.cn/",
+        "title": "前去学习",
+        "introduction": "C++大佬",
+        "avatar": "https://subingwen.cn/images/comment.gif"
     }
 ]
