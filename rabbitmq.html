@@ -793,10 +793,10 @@ AMQP，即Advanced Message Queuing Protocol，高级消息队列协议，是应�
 <p><img src="/rabbitmq/aHR0cHM6Ly91c2VyLWdvbGQtY2RuLnhpdHUuaW8vMjAyMC83LzE5LzE3MzY3OGM3YTgxY2MxYzA" alt="aHR0cHM6Ly91c2VyLWdvbGQtY2RuLnhpdHUuaW8vMjAyMC83LzE5LzE3MzY3OGM3YTgxY2MxYzA (589×254) (csdnimg.cn)"></p>
 </li>
 <li><p><strong>异步</strong>。如图所示。一个客户端请求发送进来，系统A会调用系统B、C、D三个系统，同步请求的话，响应时间就是系统A、B、C、D的总和，也就是800ms。<strong>如果使用MQ，系统A发送数据到MQ，然后就可以返回响应给客户端，不需要再等待系统B、C、D的响应，可以大大地提高性能</strong>。对于一些非必要的业务，比如发送短信，发送邮件等等，就可以采用MQ。</p>
-<p><img src="/rabbitmq/aHR0cHM6Ly91c2VyLWdvbGQtY2RuLnhpdHUuaW8vMjAyMC83LzE5LzE3MzY3OTQ1YThjNGRmNzM" alt=""></p>
+<p><img src="/rabbitmq/aHR0cHM6Ly91c2VyLWdvbGQtY2RuLnhpdHUuaW8vMjAyMC83LzE5LzE3MzY3OTQ1YThjNGRmNzM" alt></p>
 </li>
 <li><p><strong>削峰</strong>。如图所示。这其实是MQ一个很重要的应用。假设系统A在某一段时间请求数暴增，有5000个请求发送过来，系统A这时就会发送5000条SQL进入MySQL进行执行，MySQL对于如此庞大的请求当然处理不过来，MySQL就会崩溃，导致系统瘫痪。<strong>如果使用MQ，系统A不再是直接发送SQL到数据库，而是把数据发送到MQ，MQ短时间积压数据是可以接受的，然后由消费者每次拉取2000条进行处理，防止在请求峰值时期大量的请求直接发送到MySQL导致系统崩溃</strong>。</p>
-<p><img src="/rabbitmq/aHR0cHM6Ly91c2VyLWdvbGQtY2RuLnhpdHUuaW8vMjAyMC83LzE5LzE3MzY3YTlkOTAyY2NhNGY" alt=""></p>
+<p><img src="/rabbitmq/aHR0cHM6Ly91c2VyLWdvbGQtY2RuLnhpdHUuaW8vMjAyMC83LzE5LzE3MzY3YTlkOTAyY2NhNGY" alt></p>
 </li>
 </ul>
 <h2 id="3-RabbitMQ-特点"><a href="#3-RabbitMQ-特点" class="headerlink" title="3. RabbitMQ 特点"></a>3. RabbitMQ 特点</h2><ul>
@@ -1315,7 +1315,7 @@ docker run -it --rm --name rabbitmq -p 5672:5672 -p 15672:15672 rabbitmq:3.9-man
 
             
                 &nbsp; | &nbsp;字数统计:&nbsp;
-                <span class="white-color">64.2k</span> 字
+                <span class="white-color">65.5k</span> 字
             
 
             

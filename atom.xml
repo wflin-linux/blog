@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://wflin.ltd/"/>
-  <updated>2023-11-16T15:03:51.321Z</updated>
+  <updated>2023-11-20T16:15:07.606Z</updated>
   <id>https://wflin.ltd/</id>
   
   <author>
@@ -17,11 +17,38 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>shell</title>
+    <link href="https://wflin.ltd/shell.html"/>
+    <id>https://wflin.ltd/shell.html</id>
+    <published>2023-11-10T00:00:00.000Z</published>
+    <updated>2023-11-20T16:15:07.606Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;推荐阅读：&lt;/p&gt;
+&lt;h2 id=&quot;IF&quot;&gt;&lt;a href=&quot;#IF&quot; class=&quot;headerlink&quot; title=&quot;IF&quot;&gt;&lt;/a&gt;IF&lt;/h2&gt;&lt;h3 id=&quot;if&quot;&gt;&lt;a href=&quot;#if&quot; class=&quot;headerlink&quot; title=&quot;if
+        
+      
+    
+    </summary>
+    
+      <category term="shell" scheme="https://wflin.ltd/categories/shell/"/>
+    
+    
+      <category term="shell" scheme="https://wflin.ltd/tags/shell/"/>
+    
+  </entry>
+  
+  <entry>
     <title>rt-thread</title>
     <link href="https://wflin.ltd/rt-thread.html"/>
     <id>https://wflin.ltd/rt-thread.html</id>
     <published>2023-10-10T00:00:00.000Z</published>
-    <updated>2023-11-16T15:03:51.321Z</updated>
+    <updated>2023-11-20T16:15:07.606Z</updated>
     
     <summary type="html">
     
@@ -51,7 +78,7 @@
     <link href="https://wflin.ltd/socket-tcp.html"/>
     <id>https://wflin.ltd/socket-tcp.html</id>
     <published>2023-10-01T00:00:00.000Z</published>
-    <updated>2023-11-16T15:03:51.321Z</updated>
+    <updated>2023-11-20T16:15:07.606Z</updated>
     
     <summary type="html">
     
@@ -81,7 +108,7 @@
     <link href="https://wflin.ltd/qt.html"/>
     <id>https://wflin.ltd/qt.html</id>
     <published>2023-08-25T00:00:00.000Z</published>
-    <updated>2023-11-16T15:03:51.309Z</updated>
+    <updated>2023-11-20T16:15:07.594Z</updated>
     
     <summary type="html">
     
@@ -114,7 +141,7 @@
     <link href="https://wflin.ltd/chatgpt.html"/>
     <id>https://wflin.ltd/chatgpt.html</id>
     <published>2023-08-24T00:00:00.000Z</published>
-    <updated>2023-11-16T15:03:51.289Z</updated>
+    <updated>2023-11-20T16:15:07.570Z</updated>
     
     <summary type="html">
     
@@ -140,7 +167,7 @@
     <link href="https://wflin.ltd/tcp-udp.html"/>
     <id>https://wflin.ltd/tcp-udp.html</id>
     <published>2023-08-15T00:00:00.000Z</published>
-    <updated>2023-11-16T15:03:51.333Z</updated>
+    <updated>2023-11-20T16:15:07.618Z</updated>
     
     <summary type="html">
     
@@ -173,7 +200,7 @@
     <link href="https://wflin.ltd/tinyhttpd.html"/>
     <id>https://wflin.ltd/tinyhttpd.html</id>
     <published>2023-08-04T00:00:00.000Z</published>
-    <updated>2023-11-16T15:03:51.333Z</updated>
+    <updated>2023-11-20T16:15:07.618Z</updated>
     
     <summary type="html">
     
@@ -204,7 +231,7 @@
     <link href="https://wflin.ltd/bootloader.html"/>
     <id>https://wflin.ltd/bootloader.html</id>
     <published>2023-08-03T00:00:00.000Z</published>
-    <updated>2023-11-16T15:03:51.285Z</updated>
+    <updated>2023-11-20T16:15:07.570Z</updated>
     
     <summary type="html">
     
@@ -238,7 +265,7 @@
     <link href="https://wflin.ltd/sqlite.html"/>
     <id>https://wflin.ltd/sqlite.html</id>
     <published>2023-08-02T00:00:00.000Z</published>
-    <updated>2023-11-16T15:03:51.325Z</updated>
+    <updated>2023-11-20T16:15:07.610Z</updated>
     
     <summary type="html">
     
@@ -267,7 +294,7 @@
     <link href="https://wflin.ltd/openwrt.html"/>
     <id>https://wflin.ltd/openwrt.html</id>
     <published>2023-07-10T00:00:00.000Z</published>
-    <updated>2023-11-16T15:03:51.309Z</updated>
+    <updated>2023-11-20T16:15:07.594Z</updated>
     
     <summary type="html">
     
@@ -295,7 +322,7 @@
     <link href="https://wflin.ltd/wireshark.html"/>
     <id>https://wflin.ltd/wireshark.html</id>
     <published>2023-07-10T00:00:00.000Z</published>
-    <updated>2023-11-16T15:03:51.333Z</updated>
+    <updated>2023-11-20T16:15:07.618Z</updated>
     
     <summary type="html">
     
@@ -322,7 +349,7 @@
     <link href="https://wflin.ltd/raspberrypi.html"/>
     <id>https://wflin.ltd/raspberrypi.html</id>
     <published>2023-06-10T00:00:00.000Z</published>
-    <updated>2023-11-16T15:03:51.313Z</updated>
+    <updated>2023-11-20T16:15:07.598Z</updated>
     
     <summary type="html">
     
@@ -351,7 +378,7 @@
     <link href="https://wflin.ltd/smba.html"/>
     <id>https://wflin.ltd/smba.html</id>
     <published>2023-06-10T00:00:00.000Z</published>
-    <updated>2023-11-16T15:03:51.321Z</updated>
+    <updated>2023-11-20T16:15:07.606Z</updated>
     
     <summary type="html">
     
@@ -380,7 +407,7 @@
     <link href="https://wflin.ltd/zong-xian-xie-yi.html"/>
     <id>https://wflin.ltd/zong-xian-xie-yi.html</id>
     <published>2023-06-10T00:00:00.000Z</published>
-    <updated>2023-11-16T15:03:51.337Z</updated>
+    <updated>2023-11-20T16:15:07.622Z</updated>
     
     <summary type="html">
     
@@ -414,7 +441,7 @@
     <link href="https://wflin.ltd/vscode-bian-xie-linux-c.html"/>
     <id>https://wflin.ltd/vscode-bian-xie-linux-c.html</id>
     <published>2023-04-15T00:00:00.000Z</published>
-    <updated>2023-11-16T15:03:51.333Z</updated>
+    <updated>2023-11-20T16:15:07.618Z</updated>
     
     <summary type="html">
     
@@ -442,7 +469,7 @@
     <link href="https://wflin.ltd/springboot-tools.html"/>
     <id>https://wflin.ltd/springboot-tools.html</id>
     <published>2023-03-06T00:00:00.000Z</published>
-    <updated>2023-11-16T15:03:51.321Z</updated>
+    <updated>2023-11-20T16:15:07.606Z</updated>
     
     <summary type="html">
     
@@ -468,7 +495,7 @@
     <link href="https://wflin.ltd/code-tools.html"/>
     <id>https://wflin.ltd/code-tools.html</id>
     <published>2023-02-19T00:00:00.000Z</published>
-    <updated>2023-11-16T15:03:51.289Z</updated>
+    <updated>2023-11-20T16:15:07.570Z</updated>
     
     <summary type="html">
     
@@ -498,7 +525,7 @@
     <link href="https://wflin.ltd/js-han-shu.html"/>
     <id>https://wflin.ltd/js-han-shu.html</id>
     <published>2023-02-18T00:00:00.000Z</published>
-    <updated>2023-11-16T15:03:51.301Z</updated>
+    <updated>2023-11-20T16:15:07.582Z</updated>
     
     <summary type="html">
     
@@ -526,7 +553,7 @@
     <link href="https://wflin.ltd/vue-cli.html"/>
     <id>https://wflin.ltd/vue-cli.html</id>
     <published>2022-11-29T09:35:03.000Z</published>
-    <updated>2023-11-16T15:03:51.333Z</updated>
+    <updated>2023-11-20T16:15:07.618Z</updated>
     
     <summary type="html">
     
@@ -554,7 +581,7 @@
     <link href="https://wflin.ltd/minio.html"/>
     <id>https://wflin.ltd/minio.html</id>
     <published>2022-11-06T00:00:00.000Z</published>
-    <updated>2023-11-16T15:03:51.301Z</updated>
+    <updated>2023-11-20T16:15:07.586Z</updated>
     
     <summary type="html">
     
@@ -572,36 +599,6 @@
     
     
       <category term="java - oos" scheme="https://wflin.ltd/tags/java-oos/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>mqtt</title>
-    <link href="https://wflin.ltd/mqtt.html"/>
-    <id>https://wflin.ltd/mqtt.html</id>
-    <published>2022-09-01T00:00:00.000Z</published>
-    <updated>2023-11-16T15:03:51.305Z</updated>
-    
-    <summary type="html">
-    
-      
-      
-        
-        
-          &lt;h2 id=&quot;mqtt&quot;&gt;&lt;a href=&quot;#mqtt&quot; class=&quot;headerlink&quot; title=&quot;mqtt&quot;&gt;&lt;/a&gt;mqtt&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;遥测传输协议，基于发布和订阅的轻量级通讯协议，构建在 tcp/ip 协议之上&lt;/li&gt;
-&lt;li&gt;标准版，简化版
-        
-      
-    
-    </summary>
-    
-      <category term="iot" scheme="https://wflin.ltd/categories/iot/"/>
-    
-    
-      <category term="iot" scheme="https://wflin.ltd/tags/iot/"/>
-    
-      <category term="mqtt" scheme="https://wflin.ltd/tags/mqtt/"/>
     
   </entry>
   
