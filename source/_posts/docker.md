@@ -47,6 +47,8 @@ categories:
 
 * 下载docker脚本 [curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun](curl -fsSL https://get.docker.com | bash -s docker --mirror Aliyun)
 
+* [docker hub 地址，很多优秀的镜像](https://hub.docker.com/)
+
 ## 配置中科大镜像加速（推荐）
 
 * 我推荐中科大这个，阿里云有时候有一些玄学问题
